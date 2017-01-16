@@ -54,7 +54,10 @@ public  class licDaoImpl extends HibernateDaoSupport implements licDao{
             
             String sql="";
             
-            sql="select custName,contactNo,address,decidedAmt,amtPaid,balAmt from "+serivceType+" where  ";
+            sql="select custName,contactNo,address,decidedAmt,amtPaid,balAmt from "+serivceType+"  ";
+            if(contactNo!=""||subDate!=""||custName!=""){
+                sql=sql+" where ";
+            }
             if(contactNo!=""){
                 
              sql=sql + "contactNo = '"+contactNo+"' ";
