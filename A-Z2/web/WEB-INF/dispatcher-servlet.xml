@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+         
+
+    <bean id="aadharController" class="Controller.aadharController" >
+          <property name="pcardservice"><ref bean="PanCardService"/> </property>
+          <property name="rServices"><ref bean="RationCardService"/> </property>
+          <property name="tservice"><ref bean="twowfourwServices"/> </property>
+          <property name="adCServices"><ref bean="aadharCardServices"/> </property>
+          <property name="lServices"><ref bean="licServices"/> </property>
+           <property name="salItServices"><ref bean="salaryItServices"/> </property>
+             <property name="passServices"><ref bean="passport2Services"/> </property>
+          <property name="grServices"><ref bean="addGrantRenewalServices"/> </property>
+            <property name="othServices"><ref bean="otherworkServices"/></property>
+             <property name="mediclaimservices"><ref bean="mediclaimServices"/> </property>
+            
+<property name="driving1"><ref bean="drivingServices"/> </property>
+        <property name="foodservice"><ref bean="foodServices"/> </property>
+          <property name="loanServices"><ref bean="LoanService"/> </property>
+    
+    </bean>
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="aadharCard.htm">aadharController</prop>
+                 <prop key="login.htm">authenticateController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="authenticateController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="A_To_Z" />
+
+</beans>

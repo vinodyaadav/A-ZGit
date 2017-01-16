@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<beans xmlns="http://www.springframework.org/schema/beans"
+       	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       	xmlns:p="http://www.springframework.org/schema/p"
+       	xmlns:aop="http://www.springframework.org/schema/aop"
+       	xmlns:tx="http://www.springframework.org/schema/tx"
+       	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+        <bean id="aadharCardServices" class="services.aadharCardServicesImpl">
+                <property name="aadharDao"><ref bean="aadharDao" /></property>
+        </bean>
+        
+        
+        
+        
+         <bean id="drivingServices" class="services.drivingServicesImpl" >
+                <property name="drivingDao"><ref bean="drivingDao" /></property>
+        </bean>
+
+ <bean id="foodServices" class="services.foodservicesImpl" >
+                <property name="foodDao"><ref bean="foodDao" /></property>
+        </bean>
+        
+        
+        <bean id="mediclaimServices" class="services.mediclaimServicesImpl" >
+                <property name="mediclaimDao"><ref bean="mediclaimDao" /></property>
+        </bean>
+        
+       <bean id="salaryItServices" class="services.salaryItServicesImpl" >
+                <property name="SalaryItDao"><ref bean="salaryItDao" /></property>
+        </bean>
+
+<bean id="LoanService" class="services.loanServicesImpl" >
+                <property name="LoanDao"><ref bean="LoanDao" /></property>
+        </bean>
+        
+        
+          <bean id="twowfourwServices" class="services.twowfourwServicesImpl" >
+                <property name="twowfourwDao"><ref bean="twowfourwDao" /></property>
+        </bean>
+        <bean id="passport2Services" class="services.passport2ServicesImpl" >
+                <property name="passport"><ref bean="passport2Dao" /></property>
+        </bean>
+
+ <bean id="PanCardService" class="services.PanCardServiceImpl" >
+                <property name="PanCardDao"><ref bean="PanCardDao" /></property>
+        </bean>
+        
+         
+  <bean id="RationCardService" class="services.RationCardServicesImpl" >
+                <property name="RationcardDao"><ref bean="RationcardDao" /></property>
+        </bean>
+         <bean id="otherworkServices" class="services.otherworkServicesImpl" >
+                <property name="otherworkDao"><ref bean="otherworkDao" /></property>
+        </bean>
+
+        
+         <bean id="licServices" class="services.licServicesImpl" >
+                <property name="licDao"><ref bean="licDao" /></property>
+        </bean>
+  
+  <bean id="addGrantRenewalServices" class="services.addGrantRenewalServicesImpl" >
+                <property name="addGrantRenewalDao"><ref bean="addGrantRenewalDao" /></property>
+        </bean>
+        
+        
+     
+    </beans>
