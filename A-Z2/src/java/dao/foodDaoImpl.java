@@ -24,7 +24,7 @@ public class foodDaoImpl extends HibernateDaoSupport implements foodDao{
     try
     {
         getHibernateTemplate().save(food1);
-       
+       licenceid=1;
     }
     catch(Exception e)
             {

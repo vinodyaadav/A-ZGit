@@ -23,38 +23,36 @@ private String docType;
 private String submitDate;
 private String custName;
     private String contactNo;
-    private String isfn;
-    private String isimhn;
-    private String isdob;
+    private String fn;
+    private String imhn;
+    private String dob;
     private String address;
-
-  
-    private String isst;
-    private String ispt;
-    private String isvm;
-    private String isnone;
-    private String isht;
-    private String iswt;
-    private String isidm;
-    private String isjod;
-    private String isban;
-    private String isbran;
-    private String isifsc;
-    private String isbankacc;
-    private String isopno;
-    private String isopno2;
-    private String isocmpnm;
-    private String isqyfmm;
-    private String isfrae;
-    private String ismrae;
-    private String isbrae;
-    private String issrae;
-    private String ishwae;
-    private String iscdae;
+    private String st;
+    private String pt;
+    private String vm;
+    private String none;
+    private String ht;
+    private String wt;
+    private String idm;
+    private String jod;
+    private String ban;
+    private String bran;
+    private String ifsc;
+    private String bankacc;
+    private String opno;
+    private String opno2;
+    private String ocmpnm;
+    private String qyfmm;
+    private String frae;
+    private String mrae;
+    private String brae;
+    private String srae;
+    private String hwae;
+    private String cdae;
     private String decidedAmt;
     private String amtPaid;
     private String balAmt;
-    private String isrene;
+    private String rene;
     private String brcr;
     private String sclvc;
     private String thbc;
@@ -100,15 +98,6 @@ private String custName;
     /**
      * @param docType the docType to set
      */
-      public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    
-    
     public void setDocType(String docType) {
         this.docType = docType;
     }
@@ -156,363 +145,367 @@ private String custName;
     }
 
     /**
-     * @return the isfn
+     * @return the fn
      */
-    public String getIsfn() {
-        return isfn;
+    public String getFn() {
+        return fn;
     }
 
     /**
-     * @param isfn the isfn to set
+     * @param fn the fn to set
      */
-    public void setIsfn(String isfn) {
-        this.isfn = isfn;
+    public void setFn(String fn) {
+        this.fn = fn;
     }
 
     /**
-     * @return the isimhn
+     * @return the imhn
      */
-    public String getIsimhn() {
-        return isimhn;
+    public String getImhn() {
+        return imhn;
     }
 
     /**
-     * @param isimhn the isimhn to set
+     * @param imhn the imhn to set
      */
-    public void setIsimhn(String isimhn) {
-        this.isimhn = isimhn;
+    public void setImhn(String imhn) {
+        this.imhn = imhn;
     }
 
     /**
-     * @return the isdob
+     * @return the dob
      */
-    public String getIsdob() {
-        return isdob;
+    public String getDob() {
+        return dob;
     }
 
     /**
-     * @param isdob the isdob to set
+     * @param dob the dob to set
      */
-    public void setIsdob(String isdob) {
-        this.isdob = isdob;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     /**
-     * @return the isaddress
+     * @return the address
      */
-   
-
-    /**
-     * @param isaddress the isaddress to set
-     */
-   
-
-    /**
-     * @return the isst
-     */
-    public String getIsst() {
-        return isst;
+    public String getAddress() {
+        return address;
     }
 
     /**
-     * @param isst the isst to set
+     * @param address the address to set
      */
-    public void setIsst(String isst) {
-        this.isst = isst;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
-     * @return the ispt
+     * @return the st
      */
-    public String getIspt() {
-        return ispt;
+    public String getSt() {
+        return st;
     }
 
     /**
-     * @param ispt the ispt to set
+     * @param st the st to set
      */
-    public void setIspt(String ispt) {
-        this.ispt = ispt;
+    public void setSt(String st) {
+        this.st = st;
     }
 
     /**
-     * @return the isvm
+     * @return the pt
      */
-    public String getIsvm() {
-        return isvm;
+    public String getPt() {
+        return pt;
     }
 
     /**
-     * @param isvm the isvm to set
+     * @param pt the pt to set
      */
-    public void setIsvm(String isvm) {
-        this.isvm = isvm;
+    public void setPt(String pt) {
+        this.pt = pt;
     }
 
     /**
-     * @return the isnone
+     * @return the vm
      */
-    public String getIsnone() {
-        return isnone;
+    public String getVm() {
+        return vm;
     }
 
     /**
-     * @param isnone the isnone to set
+     * @param vm the vm to set
      */
-    public void setIsnone(String isnone) {
-        this.isnone = isnone;
+    public void setVm(String vm) {
+        this.vm = vm;
     }
 
     /**
-     * @return the isht
+     * @return the none
      */
-    public String getIsht() {
-        return isht;
+    public String getNone() {
+        return none;
     }
 
     /**
-     * @param isht the isht to set
+     * @param none the none to set
      */
-    public void setIsht(String isht) {
-        this.isht = isht;
+    public void setNone(String none) {
+        this.none = none;
     }
 
     /**
-     * @return the iswt
+     * @return the ht
      */
-    public String getIswt() {
-        return iswt;
+    public String getHt() {
+        return ht;
     }
 
     /**
-     * @param iswt the iswt to set
+     * @param ht the ht to set
      */
-    public void setIswt(String iswt) {
-        this.iswt = iswt;
+    public void setHt(String ht) {
+        this.ht = ht;
     }
 
     /**
-     * @return the isidm
+     * @return the wt
      */
-    public String getIsidm() {
-        return isidm;
+    public String getWt() {
+        return wt;
     }
 
     /**
-     * @param isidm the isidm to set
+     * @param wt the wt to set
      */
-    public void setIsidm(String isidm) {
-        this.isidm = isidm;
+    public void setWt(String wt) {
+        this.wt = wt;
     }
 
     /**
-     * @return the isjod
+     * @return the idm
      */
-    public String getIsjod() {
-        return isjod;
+    public String getIdm() {
+        return idm;
     }
 
     /**
-     * @param isjod the isjod to set
+     * @param idm the idm to set
      */
-    public void setIsjod(String isjod) {
-        this.isjod = isjod;
+    public void setIdm(String idm) {
+        this.idm = idm;
     }
 
     /**
-     * @return the isban
+     * @return the jod
      */
-    public String getIsban() {
-        return isban;
+    public String getJod() {
+        return jod;
     }
 
     /**
-     * @param isban the isban to set
+     * @param jod the jod to set
      */
-    public void setIsban(String isban) {
-        this.isban = isban;
+    public void setJod(String jod) {
+        this.jod = jod;
     }
 
     /**
-     * @return the isbran
+     * @return the ban
      */
-    public String getIsbran() {
-        return isbran;
+    public String getBan() {
+        return ban;
     }
 
     /**
-     * @param isbran the isbran to set
+     * @param ban the ban to set
      */
-    public void setIsbran(String isbran) {
-        this.isbran = isbran;
+    public void setBan(String ban) {
+        this.ban = ban;
     }
 
     /**
-     * @return the isifsc
+     * @return the bran
      */
-    public String getIsifsc() {
-        return isifsc;
+    public String getBran() {
+        return bran;
     }
 
     /**
-     * @param isifsc the isifsc to set
+     * @param bran the bran to set
      */
-    public void setIsifsc(String isifsc) {
-        this.isifsc = isifsc;
+    public void setBran(String bran) {
+        this.bran = bran;
     }
 
     /**
-     * @return the isbankacc
+     * @return the ifsc
      */
-    public String getIsbankacc() {
-        return isbankacc;
+    public String getIfsc() {
+        return ifsc;
     }
 
     /**
-     * @param isbankacc the isbankacc to set
+     * @param ifsc the ifsc to set
      */
-    public void setIsbankacc(String isbankacc) {
-        this.isbankacc = isbankacc;
+    public void setIfsc(String ifsc) {
+        this.ifsc = ifsc;
     }
 
     /**
-     * @return the isopno
+     * @return the bankacc
      */
-    public String getIsopno() {
-        return isopno;
+    public String getBankacc() {
+        return bankacc;
     }
 
     /**
-     * @param isopno the isopno to set
+     * @param bankacc the bankacc to set
      */
-    public void setIsopno(String isopno) {
-        this.isopno = isopno;
+    public void setBankacc(String bankacc) {
+        this.bankacc = bankacc;
     }
 
     /**
-     * @return the isopno2
+     * @return the opno
      */
-    public String getIsopno2() {
-        return isopno2;
+    public String getOpno() {
+        return opno;
     }
 
     /**
-     * @param isopno2 the isopno2 to set
+     * @param opno the opno to set
      */
-    public void setIsopno2(String isopno2) {
-        this.isopno2 = isopno2;
+    public void setOpno(String opno) {
+        this.opno = opno;
     }
 
     /**
-     * @return the isocmpnm
+     * @return the opno2
      */
-    public String getIsocmpnm() {
-        return isocmpnm;
+    public String getOpno2() {
+        return opno2;
     }
 
     /**
-     * @param isocmpnm the isocmpnm to set
+     * @param opno2 the opno2 to set
      */
-    public void setIsocmpnm(String isocmpnm) {
-        this.isocmpnm = isocmpnm;
+    public void setOpno2(String opno2) {
+        this.opno2 = opno2;
     }
 
     /**
-     * @return the isqyfmm
+     * @return the ocmpnm
      */
-    public String getIsqyfmm() {
-        return isqyfmm;
+    public String getOcmpnm() {
+        return ocmpnm;
     }
 
     /**
-     * @param isqyfmm the isqyfmm to set
+     * @param ocmpnm the ocmpnm to set
      */
-    public void setIsqyfmm(String isqyfmm) {
-        this.isqyfmm = isqyfmm;
+    public void setOcmpnm(String ocmpnm) {
+        this.ocmpnm = ocmpnm;
     }
 
     /**
-     * @return the isfrae
+     * @return the qyfmm
      */
-    public String getIsfrae() {
-        return isfrae;
+    public String getQyfmm() {
+        return qyfmm;
     }
 
     /**
-     * @param isfrae the isfrae to set
+     * @param qyfmm the qyfmm to set
      */
-    public void setIsfrae(String isfrae) {
-        this.isfrae = isfrae;
+    public void setQyfmm(String qyfmm) {
+        this.qyfmm = qyfmm;
     }
 
     /**
-     * @return the ismrae
+     * @return the frae
      */
-    public String getIsmrae() {
-        return ismrae;
+    public String getFrae() {
+        return frae;
     }
 
     /**
-     * @param ismrae the ismrae to set
+     * @param frae the frae to set
      */
-    public void setIsmrae(String ismrae) {
-        this.ismrae = ismrae;
+    public void setFrae(String frae) {
+        this.frae = frae;
     }
 
     /**
-     * @return the isbrae
+     * @return the mrae
      */
-    public String getIsbrae() {
-        return isbrae;
+    public String getMrae() {
+        return mrae;
     }
 
     /**
-     * @param isbrae the isbrae to set
+     * @param mrae the mrae to set
      */
-    public void setIsbrae(String isbrae) {
-        this.isbrae = isbrae;
+    public void setMrae(String mrae) {
+        this.mrae = mrae;
     }
 
     /**
-     * @return the issrae
+     * @return the brae
      */
-    public String getIssrae() {
-        return issrae;
+    public String getBrae() {
+        return brae;
     }
 
     /**
-     * @param issrae the issrae to set
+     * @param brae the brae to set
      */
-    public void setIssrae(String issrae) {
-        this.issrae = issrae;
+    public void setBrae(String brae) {
+        this.brae = brae;
     }
 
     /**
-     * @return the ishwae
+     * @return the srae
      */
-    public String getIshwae() {
-        return ishwae;
+    public String getSrae() {
+        return srae;
     }
 
     /**
-     * @param ishwae the ishwae to set
+     * @param srae the srae to set
      */
-    public void setIshwae(String ishwae) {
-        this.ishwae = ishwae;
+    public void setSrae(String srae) {
+        this.srae = srae;
     }
 
     /**
-     * @return the iscdae
+     * @return the hwae
      */
-    public String getIscdae() {
-        return iscdae;
+    public String getHwae() {
+        return hwae;
     }
 
     /**
-     * @param iscdae the iscdae to set
+     * @param hwae the hwae to set
      */
-    public void setIscdae(String iscdae) {
-        this.iscdae = iscdae;
+    public void setHwae(String hwae) {
+        this.hwae = hwae;
+    }
+
+    /**
+     * @return the cdae
+     */
+    public String getCdae() {
+        return cdae;
+    }
+
+    /**
+     * @param cdae the cdae to set
+     */
+    public void setCdae(String cdae) {
+        this.cdae = cdae;
     }
 
     /**
@@ -558,17 +551,17 @@ private String custName;
     }
 
     /**
-     * @return the isrene
+     * @return the rene
      */
-    public String getIsrene() {
-        return isrene;
+    public String getRene() {
+        return rene;
     }
 
     /**
-     * @param isrene the isrene to set
+     * @param rene the rene to set
      */
-    public void setIsrene(String isrene) {
-        this.isrene = isrene;
+    public void setRene(String rene) {
+        this.rene = rene;
     }
 
     /**
@@ -851,7 +844,4 @@ private String custName;
         this.irano = irano;
     }
 
-
 }
-   
- 

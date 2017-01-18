@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
 
 
 /**
@@ -17,11 +15,10 @@ import javax.persistence.Id;
  */
 @Entity
 public class aadharCard implements Serializable{
-
-    
-    @Id
-    @GeneratedValue
-    private int id;
+    @Id   
+    @GenericGenerator(name="generator",strategy = "increment")
+    @GeneratedValue(generator = "generator")
+    private int adharid;
     private String docType;
     private String oldAadharNo;
     private String custName;
@@ -46,7 +43,7 @@ public class aadharCard implements Serializable{
     private String pancard;
     private String passport;
     private String drivingLicence;
-    private String votingId;
+    private String voteId;
     private String RestLetter;
     private String govtbankpass;
     private String licpolicy;
@@ -61,17 +58,17 @@ public class aadharCard implements Serializable{
     private String rentAgreement;
 
     /**
-     * @return the id
+     * @return the adharid
      */
-    public int getId() {
-        return id;
+    public int getAdharid() {
+        return adharid;
     }
 
     /**
-     * @param id the id to set
+     * @param adharid the adharid to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setAdharid(int adharid) {
+        this.adharid = adharid;
     }
 
     /**
@@ -411,17 +408,17 @@ public class aadharCard implements Serializable{
     }
 
     /**
-     * @return the votingId
+     * @return the voteId
      */
-    public String getVotingId() {
-        return votingId;
+    public String getVoteId() {
+        return voteId;
     }
 
     /**
-     * @param votingId the votingId to set
+     * @param voteId the voteId to set
      */
-    public void setVotingId(String votingId) {
-        this.votingId = votingId;
+    public void setVoteId(String voteId) {
+        this.voteId = voteId;
     }
 
     /**
@@ -592,6 +589,6 @@ public class aadharCard implements Serializable{
         this.rentAgreement = rentAgreement;
     }
 
+  
     
-
 }

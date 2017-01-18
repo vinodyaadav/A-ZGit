@@ -25,6 +25,7 @@ public class LoanDaoImpl extends HibernateDaoSupport implements LoanDao {
         try{
            // synchronized(this){
                 getHibernateTemplate().save(loan2);
+                licenceid=1;
             //    PassPortId=PassPort.PassPortId();
            // }
         }

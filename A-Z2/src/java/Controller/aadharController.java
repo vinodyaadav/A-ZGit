@@ -7,10 +7,8 @@ package Controller;
 
 import Model.CustReport;
 import Model.aadharCard;
-import Model.lic;
 import Model.passport2;
 import Model.PanCard;
-import Model.salaryIt;
 import Model.RationCard;
 import Model.lic;
 import Model.salaryIt;
@@ -46,7 +44,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import services.aadharCardServices;
 import services.licServices;
 import services.passport2Services;
-import services.salaryItServices;
 import services.twowfourwServices;
 import services.PanCardService;
 import services.RationCardService;
@@ -352,8 +349,16 @@ private mediclaimServices mediclaimservices;
 
             int mediclaim = mediclaimservices.addmediclaim(Mediclaim);
 
-            mv.setViewName("index");
+             if(mediclaim==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+                
+            }
+             else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
         }
 
         
@@ -494,9 +499,17 @@ private mediclaimServices mediclaimservices;
             loanmodel.setCurr(curr);
             loanmodel.setProper(proper);
             int loan1 = loanServices.addLoan(loanmodel);
-              //List loanList1 = loanServices.viewLoanDetailsByContactNo(contactNo);
-            mv.setViewName("index");
+             if(loan1==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+                
+            }
+             else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;
+             }
         }
 
         
@@ -552,9 +565,17 @@ private mediclaimServices mediclaimservices;
             driving.setRadiou(radiou);
             driving.setRadiop(radiop);
             int driv = driving1.addDriving(driving);
-            List drivingList=driving1.viewDrivingDetailsByContact(contactNo);
-            mv.setViewName("index");
+            if(driv==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+                
+            }
+             else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;
+             }
         }
 
         
@@ -642,11 +663,17 @@ private mediclaimServices mediclaimservices;
             foodmodel.setChargesc(chargesc);
 
             int foodlicense = foodservice.addfoodlicence(foodmodel);
-           /* List foodList1 = foodservice.viewfoodDetailCompany(firm);
-            List foodList2 = foodservice.viewfoodDetailPropertiorName(prop);*/
-            List foodList3=foodservice.viewfoodDetailContact(contactNo);
-            mv.setViewName("index");
+           if(foodlicense==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+                
+            }
+             else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;
+             }
         }
 
         
@@ -655,41 +682,41 @@ private mediclaimServices mediclaimservices;
         
         if (action.equals("addlic1")) {
             //     Integer licid=ServletRequestUtils.getIntParameter(request,"licid");
-            String iscustName = ServletRequestUtils.getStringParameter(request, "iscustName");
-            String isdocType = ServletRequestUtils.getStringParameter(request, "isdocType");
-            String issubmitDate = ServletRequestUtils.getStringParameter(request, "issubmitDate");
+            String custName = ServletRequestUtils.getStringParameter(request, "custName");
+            String docType = ServletRequestUtils.getStringParameter(request, "docType");
+            String submitDate = ServletRequestUtils.getStringParameter(request, "submitDate");
 
-            String iscontactNo = ServletRequestUtils.getStringParameter(request, "iscontactNo");
-            String isfn = ServletRequestUtils.getStringParameter(request, "isfn");
-            String isimhn = ServletRequestUtils.getStringParameter(request, "isimhn");
-            String isdob = ServletRequestUtils.getStringParameter(request, "isdob");
-            String isaddress = ServletRequestUtils.getStringParameter(request, "isaddress");
-            String isst = ServletRequestUtils.getStringParameter(request, "isst");
-            String ispt = ServletRequestUtils.getStringParameter(request, "ispt");
-            String isvm = ServletRequestUtils.getStringParameter(request, "isvm");
-            String isnone = ServletRequestUtils.getStringParameter(request, "isnone");
-            String isht = ServletRequestUtils.getStringParameter(request, "isht");
-            String iswt = ServletRequestUtils.getStringParameter(request, "iswt");
-            String isidm = ServletRequestUtils.getStringParameter(request, "isidm");
-            String isjod = ServletRequestUtils.getStringParameter(request, "isjod");
-            String isban = ServletRequestUtils.getStringParameter(request, "isban");
-            String isbran = ServletRequestUtils.getStringParameter(request, "isbran");
-            String isifsc = ServletRequestUtils.getStringParameter(request, "isifsc");
-            String isbankacc = ServletRequestUtils.getStringParameter(request, "isbankacc");
-            String isopno = ServletRequestUtils.getStringParameter(request, "isopno");
-            String isopno2 = ServletRequestUtils.getStringParameter(request, "isopno2");
-            String isocmpnm = ServletRequestUtils.getStringParameter(request, "isocmpnm");
-            String isqyfmm = ServletRequestUtils.getStringParameter(request, "isqyfmm");
-            String isfrae = ServletRequestUtils.getStringParameter(request, "isfrae");
-            String ismrae = ServletRequestUtils.getStringParameter(request, "ismrae");
-            String isbrae = ServletRequestUtils.getStringParameter(request, "isbrae");
-            String issrae = ServletRequestUtils.getStringParameter(request, "issrae");
-            String ishwae = ServletRequestUtils.getStringParameter(request, "ishwae");
-            String iscdae = ServletRequestUtils.getStringParameter(request, "iscdae");
-            String isdecidedAmt = ServletRequestUtils.getStringParameter(request, "isdecidedAmt");
-            String isbalAmt = ServletRequestUtils.getStringParameter(request, "isbalAmt");
-            String isamtPaid = ServletRequestUtils.getStringParameter(request, "isamtPaid");
-            String isrene = ServletRequestUtils.getStringParameter(request, "isrene");
+            String contactNo = ServletRequestUtils.getStringParameter(request, "contactNo");
+            String fn = ServletRequestUtils.getStringParameter(request, "fn");
+            String imhn = ServletRequestUtils.getStringParameter(request, "imhn");
+            String dob = ServletRequestUtils.getStringParameter(request, "dob");
+            String address = ServletRequestUtils.getStringParameter(request, "address");
+            String st = ServletRequestUtils.getStringParameter(request, "st");
+            String pt = ServletRequestUtils.getStringParameter(request, "pt");
+            String vm = ServletRequestUtils.getStringParameter(request, "vm");
+            String none = ServletRequestUtils.getStringParameter(request, "none");
+            String ht = ServletRequestUtils.getStringParameter(request, "ht");
+            String wt = ServletRequestUtils.getStringParameter(request, "wt");
+            String idm = ServletRequestUtils.getStringParameter(request, "idm");
+            String jod = ServletRequestUtils.getStringParameter(request, "jod");
+            String ban = ServletRequestUtils.getStringParameter(request, "ban");
+            String bran = ServletRequestUtils.getStringParameter(request, "bran");
+            String ifsc = ServletRequestUtils.getStringParameter(request, "ifsc");
+            String bankacc = ServletRequestUtils.getStringParameter(request, "bankacc");
+            String opno = ServletRequestUtils.getStringParameter(request, "opno");
+            String opno2 = ServletRequestUtils.getStringParameter(request, "opno2");
+            String ocmpnm = ServletRequestUtils.getStringParameter(request, "ocmpnm");
+            String qyfmm = ServletRequestUtils.getStringParameter(request, "qyfmm");
+            String frae = ServletRequestUtils.getStringParameter(request, "frae");
+            String mrae = ServletRequestUtils.getStringParameter(request, "mrae");
+            String brae = ServletRequestUtils.getStringParameter(request, "brae");
+            String srae = ServletRequestUtils.getStringParameter(request, "srae");
+            String hwae = ServletRequestUtils.getStringParameter(request, "hwae");
+            String cdae = ServletRequestUtils.getStringParameter(request, "cdae");
+            String decidedAmt = ServletRequestUtils.getStringParameter(request, "decidedAmt");
+            String balAmt = ServletRequestUtils.getStringParameter(request, "balAmt");
+            String amtPaid = ServletRequestUtils.getStringParameter(request, "amtPaid");
+            String rene = ServletRequestUtils.getStringParameter(request, "rene");
             String brcr = ServletRequestUtils.getStringParameter(request, "brcr");
             String sclvc = ServletRequestUtils.getStringParameter(request, "sclvc");
             String thbc = ServletRequestUtils.getStringParameter(request, "thbc");
@@ -711,40 +738,45 @@ private mediclaimServices mediclaimservices;
             String irano = ServletRequestUtils.getStringParameter(request, "irano");
 
             lic li = new lic();
+            
 
-            li.setCustName(iscustName);
-            li.setDocType(isdocType);
-            li.setSubmitDate(issubmitDate);
-            li.setDecidedAmt(isdecidedAmt);
-            li.setIsfn(isfn);
-            li.setIsimhn(isimhn);
-            li.setIsdob(isdob);
-            li.setAddress(isaddress);
-            li.setIsst(isst);
-            li.setIspt(ispt);
-            li.setIsvm(isvm);
-            li.setIsnone(isnone);
-            li.setIsht(isht);
-            li.setIswt(iswt);
-            li.setIsidm(isidm);
-            li.setIsjod(isjod);
-            li.setIsban(isban);
-            li.setIsfrae(isfrae);
-            li.setIsmrae(ismrae);
-            li.setIssrae(issrae);
-            li.setIsbran(isbran);
-            li.setIsifsc(isifsc);
-            li.setIsbankacc(isbankacc);
-            li.setIsopno(isopno);
-            li.setIsopno2(isopno2);
-            li.setIsocmpnm(isocmpnm);
-            li.setIsqyfmm(isqyfmm);
-            li.setIshwae(ishwae);
-            li.setIscdae(iscdae);
-            li.setContactNo(iscontactNo);
-            li.setAmtPaid(isamtPaid);
-            li.setBalAmt(isbalAmt);
-            li.setIsrene(isrene);
+            li.setCustName(custName);
+            li.setDocType(docType);
+            li.setSubmitDate(submitDate);
+            li.setContactNo(contactNo);
+            li.setFn(fn);
+           li.setLtbl(ltbl);
+           li.setVoigid(voigid);
+            li.setImhn(imhn);
+            li.setDob(dob);
+            li.setAddress(address);
+            li.setSt(st);
+            li.setPt(pt);
+            li.setVm(vm);
+            li.setNone(none);
+            li.setHt(ht);
+            li.setWt(wt);
+            li.setIdm(idm);
+            li.setJod(jod);
+            li.setBan(ban);
+            li.setFrae(frae);
+            li.setMrae(mrae);
+            li.setSrae(srae);
+            li.setBran(bran);
+            li.setIfsc(ifsc);
+            li.setBankacc(bankacc);
+            li.setOpno(opno);
+            li.setOpno2(opno2);
+            li.setOcmpnm(ocmpnm);
+            li.setQyfmm(qyfmm);
+            li.setHwae(hwae);
+            li.setCdae(cdae);
+            li.setBrae(brae);
+            li.setContactNo(contactNo);
+            li.setDecidedAmt(decidedAmt);
+            li.setAmtPaid(amtPaid);
+            li.setBalAmt(balAmt);
+            li.setRene(rene);
             li.setBrcr(brcr);
             li.setSclvc(sclvc);
             li.setThbc(thbc);
@@ -759,18 +791,29 @@ private mediclaimServices mediclaimservices;
             li.setPassp(passp);
             li.setBpass(bpass);
             li.setIrano(irano);
+            li.setPssprt(pssprt);
+            li.setCdid(cdid);
+            li.setRncd(rncd);
 
             int addlic = lServices.addLic(li);
 
-            List liclist = lServices.viewlicDetailsMobileNo(iscontactNo);
-            List liclist1 = lServices.viewlicDetailsCustomerName(iscustName);
+            List liclist = lServices.viewlicDetailsMobileNo(contactNo);
+            List liclist1 = lServices.viewlicDetailsCustomerName(custName);
 
-            mv.setViewName("index");
+            
+            if(addlic==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
-        }
-        
-        
-         if (action.equals("addSalaryIt"))
+                
+            }            
+            else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
+        }          
+ 
+        if (action.equals("addSalaryIt"))
 {
             String docType = ServletRequestUtils.getStringParameter(request, "docType");
             String itType = ServletRequestUtils.getStringParameter(request, "itType");
@@ -867,15 +910,24 @@ private mediclaimServices mediclaimservices;
             SalaryIt.setLoan(Loan);
             
              int SalIt=salItServices.addsalaryIt(SalaryIt);
-             
-         List viewsalaryItDetailsCustName=salItServices.viewsalaryItDetailsCustName(custName);
-         List viewsalaryItDetailsContactNo=salItServices.viewsalaryItDetailsContactNo(contactNo);
-             
-        mv.setViewName("index");
-        return mv;
+             if(SalIt==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
+            return mv;
+                
+            }
+
+            
+            else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
+        
+
+         
+        
         }
-        
-        
+ 
         
         
         
@@ -944,16 +996,24 @@ private mediclaimServices mediclaimservices;
 
             int addotherwork = othServices.addOtherwork(ow);
             
-            List otherworkList = othServices.viewotherworkDetailsCustomerName(custName);
-
-            mv.setViewName("index");
+            if(addotherwork==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+                
+            }
+          //  List otherworkList = othServices.viewotherworkDetailsCustomerName(custName);
+
+            else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
+
 
         }
 
         
         if (action.equals("addgetGrantRenewal1")) {
-            
             String subDate = ServletRequestUtils.getStringParameter(request, "subDate");
             String TheLicensingAuthority = ServletRequestUtils.getStringParameter(request, "TheLicensingAuthority");
             String MotorCyclewithoutgear = ServletRequestUtils.getStringParameter(request, "MotorCyclewithoutgear");
@@ -966,8 +1026,9 @@ private mediclaimServices mediclaimservices;
             String MotorVehicleoffollowingdescription = ServletRequestUtils.getStringParameter(request, "isMotorVehicleoffollowingdescription");
             String custName = ServletRequestUtils.getStringParameter(request, "custName");
             String Son = ServletRequestUtils.getStringParameter(request, "Son");
-            String PermanentAddress = ServletRequestUtils.getStringParameter(request, "PermanentAddress");
+            String address = ServletRequestUtils.getStringParameter(request, "address");
             String TemporaryAddress = ServletRequestUtils.getStringParameter(request, "TemporaryAddress");
+             String contactNo = ServletRequestUtils.getStringParameter(request, "contactNo");
             String datepicker = ServletRequestUtils.getStringParameter(request, "datepicker");
             String EducationalQualification = ServletRequestUtils.getStringParameter(request, "EducationalQualification");
             String IdentificationMark = ServletRequestUtils.getStringParameter(request, "IdentificationMark");
@@ -999,14 +1060,15 @@ private mediclaimServices mediclaimservices;
             gr.setMotorVehicleoffollowingdescription(MotorVehicleoffollowingdescription);
             gr.setCustName(custName);
             gr.setSon(Son);
-            gr.setAddress(PermanentAddress);
+            gr.setAddress(address);
             gr.setTemporaryAddress(TemporaryAddress);
+            gr.setContactNo(contactNo);
             gr.setDatepicker(datepicker);
             gr.setEducationalQualification(EducationalQualification);
             gr.setIdentificationMark(IdentificationMark);
             gr.setBloodGroupwithRHfactor(BloodGroupwithRHfactor);
             gr.setDecidedAmt(decidedAmt);
-            gr.setAmtPaid(action);
+            gr.setAmtPaid(advAmt);
             gr.setBalAmt(balAmt);
             gr.setRefrencename(refrencename);
 
@@ -1209,7 +1271,12 @@ private mediclaimServices mediclaimservices;
   
 
             int RationCard = rServices.addRation(rationCard);
-           List RationCardList=rServices.viewRationCardDetailsCustomerName(custName);
+          if(RationCard==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
+            return mv;
+                
+            }
             mv.setViewName("index");
             return mv;
         }
@@ -1239,7 +1306,7 @@ private mediclaimServices mediclaimservices;
             String pancard = ServletRequestUtils.getRequiredStringParameter(request, "pancard");
             String passport = ServletRequestUtils.getRequiredStringParameter(request, "passport");
             String drivingLicence = ServletRequestUtils.getRequiredStringParameter(request, "drivingLicence");
-            String votingId = ServletRequestUtils.getRequiredStringParameter(request, "votingId");
+            String voteId = ServletRequestUtils.getRequiredStringParameter(request, "Votingid");
             String RestLetter = ServletRequestUtils.getRequiredStringParameter(request, "RestLetter");
             String govtbankpass = ServletRequestUtils.getRequiredStringParameter(request, "govtbankpass");
             String licpolicy = ServletRequestUtils.getRequiredStringParameter(request, "licpolicy");
@@ -1278,7 +1345,7 @@ private mediclaimServices mediclaimservices;
             AadharCard.setPancard(pancard);
             AadharCard.setPassport(passport);
             AadharCard.setDrivingLicence(drivingLicence);
-            AadharCard.setVotingId(votingId);
+            AadharCard.setVoteId(voteId);
             AadharCard.setRestLetter(RestLetter);
             AadharCard.setGovtbankpass(govtbankpass);
             AadharCard.setLicpolicy(licpolicy);
@@ -1294,17 +1361,25 @@ private mediclaimServices mediclaimservices;
 
 //            lic Lic=new lic();
 //            salaryIt salIt=new salaryIt();
-            lic Lic = new lic();
-            salaryIt salIt = new salaryIt();
+           // lic Lic = new lic();
+         //   salaryIt salIt = new salaryIt();
 
            // int addlic=lServices.addLic(Lic);
             int aadharList = adCServices.addAadharCard(AadharCard);
 
+            
+             if(aadharList==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
+            return mv;
+                
+            }
+
+            
             // int SalIt=salItServices.addsalaryIt(salIt);
             mv.setViewName("index");
             return mv;
         }
-
  if (action.equals("add2w1")) {
              String docType = ServletRequestUtils.getStringParameter(request, "docType");
             String custName = ServletRequestUtils.getStringParameter(request, "custName");
@@ -1356,9 +1431,12 @@ private mediclaimServices mediclaimservices;
 
             int twowFourwh = tservice.addTwowfourw(TwowFourw);
             List twowfourwhList=tservice.viewtwowfourwhDetailsCustomerName(custName);
-
-            mv.setViewName("index");
+             if(twowFourwh==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
+             }
+            
         }
 
       
@@ -1562,7 +1640,13 @@ if (action.equals("openFoodLicence"))
      
 
             int PanCard = pcardservice.addPanCard(pancard);
-
+            
+ if(PanCard==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
+            return mv;
+                
+            }
 //            List PanCardList=pcardservice.viewPanCardDetailsCustomerName(custName);
             mv.setViewName("index");
             return mv;
@@ -1735,7 +1819,16 @@ if (action.equals("openFoodLicence"))
             pass.setIran(iran);
 try{
             int Pass = passServices.addPassport2(pass);
-
+ if(Pass==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
+            return mv;
+                
+            }
+               else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
                
         }
         catch(Exception e){

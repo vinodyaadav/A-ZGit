@@ -146,7 +146,7 @@
 						<input type="checkbox" id="drivingLicence">DRIV LICN-VALID
 						</label>
 						<label class="radio-inline">
-						  <input type="checkbox" id="votingId">VOTING ID
+						  <input type="checkbox" id="voteId">VOTING ID
 						</label>
 						<label class="radio-inline">
 						  <input type="checkbox" id="RestLetter">SOCIETY RESI LETTER
@@ -198,7 +198,7 @@
 							<tr>
 							<td >
 							<div>
-							<button type="submit" class="btn btn-primary" onclick="addAdharCard()">Submit</button>
+							<button type="button" class="btn btn-primary" onclick="addAdharCard()">Submit</button>
 							</div>
                               </td>
 							  </tr>

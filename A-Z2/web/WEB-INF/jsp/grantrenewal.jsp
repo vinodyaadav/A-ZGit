@@ -81,8 +81,9 @@
                                         <td style="width:100px;">
                                             Customer Name :&nbsp&nbsp<input class="form-control" id="custName" style="width:700px;" ><br>
                                             Son/Wife/Daughter :&nbsp&nbsp<input class="form-control" id="Son" style="width:700px;" ><br>
-                                            Permanent Address :&nbsp&nbsp<textarea class="form-control" rows="2" id="PermanentAddress" style="width:700px;"></textarea><br>
+                                            Permanent Address :&nbsp&nbsp<textarea class="form-control" rows="2" id="address" style="width:700px;"></textarea><br>
                                             Temporary Address/Official Address :&nbsp&nbsp<textarea class="form-control" rows="2" id="TemporaryAddress" style="width:700px;"></textarea><br>
+                                             Contact No :&nbsp&nbsp <input class="form-control"  style="width:300px;" id="contactNo"><br>
                                             <td >Date:</td>
                                         <td ><input class="form-control" id="datepicker" style="width:90%;"></td>
                                         <td>  &nbsp </td></tr>

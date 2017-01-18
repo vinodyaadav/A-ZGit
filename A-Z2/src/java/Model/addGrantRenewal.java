@@ -19,9 +19,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class addGrantRenewal implements Serializable{
 
 
-    @Id   
-    @GenericGenerator(name="generator",strategy = "increment")
-    @GeneratedValue(generator = "generator")
+   
     private int grantrenewalid;
     private String submitDate;
     private String TheLicensingAuthority;
@@ -40,6 +38,10 @@ public class addGrantRenewal implements Serializable{
     private String Son;
     private String address;
     private String TemporaryAddress;
+    private String contactNo;
+
+   
+    
     private String datepicker;
     private String EducationalQualification;
     private String IdentificationMark;
@@ -62,6 +64,10 @@ public class addGrantRenewal implements Serializable{
     /**
      * @return the grantrenewalid
      */
+   
+     @Id   
+    @GenericGenerator(name="generator",strategy = "increment")
+    @GeneratedValue(generator = "generator")
     public int getGrantrenewalid() {
         return grantrenewalid;
     }
@@ -506,7 +512,13 @@ public class addGrantRenewal implements Serializable{
     public void setIssuedby(String issuedby) {
         this.issuedby = issuedby;
     }
+   public String getContactNo() {
+        return contactNo;
+    }
 
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
    
     
 }
