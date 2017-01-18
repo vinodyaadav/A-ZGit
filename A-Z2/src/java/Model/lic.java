@@ -26,7 +26,9 @@ private String custName;
     private String isfn;
     private String isimhn;
     private String isdob;
-    private String isaddress;
+    private String address;
+
+  
     private String isst;
     private String ispt;
     private String isvm;
@@ -98,6 +100,15 @@ private String custName;
     /**
      * @param docType the docType to set
      */
+      public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    
     public void setDocType(String docType) {
         this.docType = docType;
     }
@@ -189,16 +200,12 @@ private String custName;
     /**
      * @return the isaddress
      */
-    public String getIsaddress() {
-        return isaddress;
-    }
+   
 
     /**
      * @param isaddress the isaddress to set
      */
-    public void setIsaddress(String isaddress) {
-        this.isaddress = isaddress;
-    }
+   
 
     /**
      * @return the isst
