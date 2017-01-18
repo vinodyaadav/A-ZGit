@@ -290,7 +290,7 @@
                             <tr>
                                 <td >
                                     <div>
-                                        <button type="submit" class="btn btn-primary" onclick="addlicdetails()">Submit</button>
+                                        <button type="button" class="btn btn-primary" onclick="addlicdetails()">Submit</button>
                                     </div>
                                 </td>
                             </tr>

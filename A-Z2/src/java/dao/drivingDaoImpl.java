@@ -23,7 +23,7 @@ public class drivingDaoImpl extends HibernateDaoSupport implements drivingDao{
     
     try{
         getHibernateTemplate().save(Drive);
-       
+       licenceid=1;
     }
     catch(Exception e)
             {

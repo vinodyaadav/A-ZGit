@@ -22,7 +22,7 @@ public class mediclaimDaoImpl extends HibernateDaoSupport implements mediclaimDa
     
     try{
         getHibernateTemplate().save(Mediclaim);
-       
+       id=1;
     }
     catch(Exception e)
     {

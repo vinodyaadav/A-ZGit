@@ -239,10 +239,10 @@ function addPassPortDetails() {
 
     addPassPort(firstName, middleName, lastName, address, emailId, contactNo, dob, male, female, birthCert, schoolCert, sscCert, hscCert, ahCert, panCert, vCert, dlCert, coCert, rCert, lCert, soCert, gCert, aCert, voCert, clCert, bCert, pCert);
 }
-  function addGrantRenewal(){
+   function addGrantRenewal(){
     
     var subDate = document.getElementById("subDate").value;
-   
+    //alert(subDate);
     var TheLicensingAuthority = document.getElementById("TheLicensingAuthority").value;
     var isMotorCyclewithoutgear = document.getElementById("MotorCyclewithoutgear").checked;
     var MotorCyclewithoutgear = "";
@@ -337,10 +337,10 @@ function addPassPortDetails() {
 
     }
     var custName = document.getElementById("custName").value;
-    
     var Son = document.getElementById("Son").value;
-    var PermanentAddress = document.getElementById("PermanentAddress").value;
+    var address = document.getElementById("address").value;
     var TemporaryAddress = document.getElementById("TemporaryAddress").value;
+    var contactNo = document.getElementById("contactNo").value;
     
     var datepicker = document.getElementById("datepicker").value;
 
@@ -362,20 +362,23 @@ function addPassPortDetails() {
     var issuedbythe = document.getElementById("issuedbythe").value;
     var IencloseDriving = document.getElementById("IencloseDriving").value;
     var issuedby = document.getElementById("issuedby").value;
-    
-    if(custName==""){
+     if(custName==""){
         alert("Please Enter Customer Name")
         document.getElementById("custName").focus();
     }
-    else if(PermanentAddress==""){
+    else if(address==""){
           alert("Please Enter Permanent Address")
-        document.getElementById("PermanentAddress").focus();
+        document.getElementById("address").focus();
+    }
+     else if(contactNo==""){
+          alert("Please Enter Contact No")
+        document.getElementById("contactNo").focus();
     }
     else if(decidedAmt==""){
           alert("Please Enter Decided Amount")
         document.getElementById("decidedAmt").focus();
     }else if(advAmt==""){
-          alert("Please Enter Advacne Amount")
+          alert("Please Enter  Amount Paid")
         document.getElementById("advAmt").focus();
     
     }else if(balAmt==""){
@@ -386,12 +389,13 @@ function addPassPortDetails() {
     else{
     addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear, MotorCyclewithgear, InvalidCarriages, LightMotorVehicle,
             MediumMotorCycle, HeavygoodsVehicle, HeavyPassengerMotorVehicle, RoadRollers, MotorVehicleoffollowingdescription,
-            custName, Son, PermanentAddress, TemporaryAddress, datepicker, EducationalQualification, IdentificationMark, BloodGroupwithRHfactor,
+            custName, Son, address, TemporaryAddress,contactNo, datepicker, EducationalQualification, IdentificationMark, BloodGroupwithRHfactor,
             decidedAmt,advAmt,balAmt,refrencename,Iholdaneffectivedrivinglicencetodrive, Particulars, Particularsof, Haveyoubeen, IencloseMedical, issuedbythe, IencloseDriving, issuedby);
 
 
 }
-  } 
+  }
+
 
 //function addlicdetails() {
 //
@@ -795,10 +799,10 @@ function addViewReport()
     }
 
 }
-
 function addmediclaim() {
    
      var documentType = document.getElementById("documentType").value;
+   
     var oldPolicyNo = document.getElementById("oldPolicyNo").value;
     var companyName = document.getElementById("companyName").value;
     var renewDate = document.getElementById("renewDate").value;
@@ -961,8 +965,33 @@ function addmediclaim() {
     var balAmt = document.getElementById("balAmt").value;
     var refName = document.getElementById("refName").value;
     var submitDate = document.getElementById("submitDate").value;
-  
+  if(customerName==""){
+        alert("Please Enter First Name");
+        document.getElementById("customerName").focus();
+    }
+     else if(address==""){
+          alert("Please Enter Full Address");
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No");
+        document.getElementById("contactNo").focus();
+    }
+    else if(decideAmt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decideAmt").focus();
+    }else if(amountPaid==""){
+          alert("Please Enter Amount Paid");
+        document.getElementById("amountPaid").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmt").focus();
+        
+    }
+    else{
     addmediclaimDetails(documentType,oldPolicyNo, companyName, renewDate, customerName, middleName, lastName, husbandName, dob, address, contactNo, memberFirstName, age, secondMemberName, secondMemberAge, thirdMemberName, thirdMemberAge, fourthMemberName, fourthMemberAge, fifthMemberName, fifthMemberAge, adharCard, votingCard, passport, drivingLicence, pancard, adharCardadd, votingCardadd, passportadd, drivingLicenceadd, bankpassbook, corporateLetter, rentAgreement, addProofLightBill, decideAmt, amountPaid, balAmt, refName, submitDate);
+}
 }
 function addAdharCard()
 {
@@ -1228,12 +1257,11 @@ function addAdharCard()
  * and open the template in the editor.
  */
 
-
 function addPassport2Details()
 {
 
 
-    var docType=document.getElementById("docType").selected;
+    var docType=document.getElementById("docType").value;
    // alert(docType);
     var optionsRadios1 = document.getElementById("optionsRadios1").selected;
     var optionsRadios2 = document.getElementById("optionsRadios2").selected;
@@ -1555,9 +1583,35 @@ function addPassport2Details()
         iran = "No";
 
     }
+     if(custName==""){
+        alert("Please Enter First Name");
+        document.getElementById("custName").focus();
+    }
+    else if(address==""){
+          alert("Please Enter Present Address");
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No");
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decidedAmt").focus();
+    }
+    else if(balAmt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmt").focus();
+        
+    }
+    else if(amtPaid==""){
+          alert("Please Enter Amount Paid");
+        document.getElementById("amtPaid").focus();
+    
+    }
     // alert("37"+iran);   
 
-    getPassport2Details(docType, optionsRadios1, optionsRadios2, custsrnm, custName, custpsnm, dob, optionsRadios3, optionsRadios4, pob, tal, dist, ste,
+   else{ getPassport2Details(docType, optionsRadios1, optionsRadios2, custsrnm, custName, custpsnm, dob, optionsRadios3, optionsRadios4, pob, tal, dist, ste,
             quali, optionsRadios5, optionsRadios6, optionsRadios7, optionsRadios8, optionsRadios9, optionsRadios10,
             optionsRadios11, vblmrk, address, contactNo, email, nmofp, dors, phno, whnm, fnm, mnm, pvadd, pin, doi, fno, poi, doe, flnm1,
             add1, mob1, flnm2, add2, mob2, optionsRadios12, optionsRadios13, decidedAmt, date1, aamt, date2, balAmt, date3,amtPaid, date4,submitDate,  birthCert, schoolCert, ssc, hsc, ahem,
@@ -1565,6 +1619,7 @@ function addPassport2Details()
 
 
 
+}
 }
 
 
@@ -1697,7 +1752,7 @@ function getPancardDetail() {
     else {
         drivngLicn = "No";
 
-
+    }
 
         var isvotingId = document.getElementById("votingId").checked;
         var votingId = "";
@@ -1838,11 +1893,39 @@ function getPancardDetail() {
     var submitDate = document.getElementById("submitDate").value;
    
 
-
+   if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
     }
+    
+    else if(address==""){
+          alert("Please Enter address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(amtPaid==""){
+          alert("Please Enter Amount Paid")
+        document.getElementById("amtPaid").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("balAmt").focus();
+     
+    }
+    
+    else{
+    
 
     addPancard(docType,CorrectionForm, OldpanNo, custName, FatherName, SurName, HusbandName, Dob, address, contactNo, BirthCert, sscCert, hscCert, marriageCert, magisrateCharge, adharCard, passprtValid, drivngLicn, votingId, domicileCert, adharCard1, voteId, passportValid, drivingLicvalid, bankPaPhoto, corpeterLetter, notory, addProof, domCert,decidedAmt,amtPaid,balAmt,Remarknote,submitDate );
     }
+}    
+    
     function getFoodLicenceDetails() {
     var documentType = document.getElementById("documentType").value;
     var food = document.getElementById("food").value;
@@ -1964,20 +2047,46 @@ function getPancardDetail() {
     else {
         shop = "no";
     }
+    
+    if(customerName==""){
+        alert("Please Enter Firm/Company Name");
+        document.getElementById("customerName").focus();
+    }
+     else if(contactNo==""){
+          alert("Please Enter Contact No ");
+        document.getElementById("contactNo").focus();
+    }
+    else if(addfull==""){
+          alert("Please Enter Full Address");
+        document.getElementById("addfull").focus();
+    }
+    
+    else if(decideAmnt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decideAmnt").focus();
+    }else if(amountPaid==""){
+          alert("Please Enter  Amount Paid");
+        document.getElementById("amountPaid").focus();
+    
+    }else if(balAmnt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmnt").focus();
+        
+    }
 
-    addFoodLicenceDetails(documentType,food, renewdate, customerName,contactNo, addfull, nature, empquantity,
+    else{addFoodLicenceDetails(documentType,food, renewdate, customerName,contactNo, addfull, nature, empquantity,
             prop, partner, water, product, turnover, ifr, changes, decideAmnt, amountPaid,
             balAmnt, refName,submitDate, adhr, vot, pass, dri, pan, light, rent, let, map, gum,
-            noc, shop, AB, chargesa, chargesb, chargesc);
+            noc, shop, AB, chargesa, chargesb, chargesc);}
 }
 
-function getDrivingLicenceDetails() {
-    var documentType = document.getElementById("documentType").value;
-    
-    var customerName = document.getElementById("customerName").value;
-    var contactNo = document.getElementById("contactNo").value;
+ function getDrivingLicenceDetails() {
+        var documentType = document.getElementById("documentType").value;
 
-    var son = document.getElementById("son").value;
+        var customerName = document.getElementById("customerName").value;
+        var contactNo = document.getElementById("contactNo").value;
+
+        var son = document.getElementById("son").value;
 
     var presentaddress = document.getElementById("presentaddress").value;
 
@@ -2057,10 +2166,34 @@ function getDrivingLicenceDetails() {
     else {
         radiop = "no";
     }
+     if(customerName==""){
+        alert("Please Enter Applicant Name");
+        document.getElementById("customerName").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No");
+        document.getElementById("contactNo").focus();
+    }
+    else if(presentaddress==""){
+          alert("Please Enter Present Address");
+        document.getElementById("presentaddress").focus();
+    }
+    else if(decideAmnt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decideAmnt").focus();
+    }else if(amountPaid==""){
+          alert("Please Enter Amount Paid");
+        document.getElementById("amountPaid").focus();
+    
+    }else if(balAmnt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmnt").focus();
+        
+    }
+    else{
     addDrivingLicenceDetails(documentType, customerName,contactNo, son, presentaddress, permanentaddress, dateofbirth, education, bloodgroup, identificationmark, identificationmarks, decideAmnt, amountPaid, balAmnt, refName,submitDate, radioa, radiob, radioc, radiod, radioe, radiou, radiop);
 }
-
-
+}
 
 
 function addmediclaim() {
@@ -2233,6 +2366,7 @@ function addmediclaim() {
 
 
 
+
 function addSalaryItDetails()
 
 
@@ -2240,13 +2374,13 @@ function addSalaryItDetails()
    
     var itType =document.getElementById("itType").value;
     var panNo=document.getElementById("panNo").value;
-    var docType=document.getElementById("docType").value;alert(docType);
+    var docType=document.getElementById("docType").value;// alert(docType);
     
     var custName=document.getElementById("custName").value;alert(custName);
     var surName=document.getElementById("surName").value;
     var dateOfBirth=document.getElementById("dateOfBirth").value;
-    var contactNo=document.getElementById("contactNo").value;alert("Contact"+contactNo);
-     var address = document.getElementById("address").value;alert(address);
+    var contactNo=document.getElementById("contactNo").value;// alert("Contact"+contactNo);
+     var address = document.getElementById("address").value;// alert(address);
     var itMakeValue=document.getElementById("itMakeValue").value;
     var textPaidArea=document.getElementById("textPaidArea").value;
     var licPremPaid=document.getElementById("licPremPaid").value;
@@ -2262,40 +2396,40 @@ function addSalaryItDetails()
    
     
     var ifscCode=document.getElementById("ifscCode").value;
-    alert("16"+ifscCode);
+    // alert("16"+ifscCode);
     
     var micrCode=document.getElementById("micrCode").value;
-    alert("17"+micrCode);
+    // alert("17"+micrCode);
     var additionalInfo1=document.getElementById("additionalInfo1").value;
-    alert("18"+additionalInfo1);
+    // alert("18"+additionalInfo1);
     var additionalInfo2=document.getElementById("additionalInfo2").value;
-    alert("19"+additionalInfo2);
+    // alert("19"+additionalInfo2);
     var decidedAmt=document.getElementById("decidedAmt").value;
-    alert("20"+decidedAmt);
+    // alert("20"+decidedAmt);
     var amtPaid=document.getElementById("amtPaid").value;
-    alert("21"+amtPaid);
+    // alert("21"+amtPaid);
     var balAmt=document.getElementById("balAmt").value;
-     alert("22"+balAmt);
+     // alert("22"+balAmt);
     var refAmt=document.getElementById("refAmt").value;
         var submitDate=document.getElementById("submitDate").value;
-  alert("23"+submitDate);
+  // alert("23"+submitDate);
    
-    alert("24"+panCard);
-    alert("25"+aadharCard);
-    alert("26"+votingCard);
-    alert("27"+passportValid);
-    alert("28"+drivingLicn);
-    alert("29"+rationCard);
-    alert("30"+lightBill);
-    alert("31"+salaryItPaper);
-    alert("32"+canclCheq);
-    alert("33"+bankDetails);
-    alert("34"+investmentCopy);
-    alert("35"+loanEmi);
-    alert("36"+gumasta);
-    alert("37"+currentAcc);
-    alert("39"+investment);
-    alert("40"+Loan); 
+    // alert("24"+panCard);
+    // alert("25"+aadharCard);
+    // alert("26"+votingCard);
+    // alert("27"+passportValid);
+    // alert("28"+drivingLicn);
+    // alert("29"+rationCard);
+    // alert("30"+lightBill);
+    // alert("31"+salaryItPaper);
+    // alert("32"+canclCheq);
+    // alert("33"+bankDetails);
+    // alert("34"+investmentCopy);
+    // alert("35"+loanEmi);
+    // alert("36"+gumasta);
+    // alert("37"+currentAcc);
+    // alert("39"+investment);
+    // alert("40"+Loan); 
     var ispanCard=document.getElementById("panCard").checked;
      var panCard="";
     if(ispanCard)
@@ -2474,7 +2608,36 @@ function addSalaryItDetails()
         
     }
  
-      
+      if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    else if(address==""){
+          alert("Please Enter Permanent Address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(balAmt==""){
+          alert("Please Enter Balance Amount")
+        document.getElementById("balAmt").focus();
+    
+    }else if(amtPaid==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("amtPaid").focus();
+        
+    }
+    else if(submitDate==""){
+          alert("Please Enter Submit Date")
+        document.getElementById("submitDate").focus();
+        
+    }
+    else{
 
     addSalaryIt(docType,itType,panNo,custName,surName,dateOfBirth,contactNo,address,itMakeValue,textPaidArea,licPremPaid,
               medicalPrem,hraInterest,natureOfBuisness,salaryRsMly,companyName,post,bnkAccNo,branch,ifscCode,micrCode,additionalInfo1,
@@ -2483,10 +2646,7 @@ function addSalaryItDetails()
  
  
  
- }
-
-
-
+ }}
 function addLoanFileDetails() {
     var docType = document.getElementById("docType").value;
     var Loan = document.getElementById("oro").value;
@@ -2507,7 +2667,7 @@ function addLoanFileDetails() {
     var decidedAmt = document.getElementById("decidedAmt").value;
     var amtPaid = document.getElementById("amtPaid").value;
     var balAmt = document.getElementById("balAmt").value;
-    var refName = document.getElementById("refName").value
+    var refName = document.getElementById("refName").value;
      var submitDate = document.getElementById("submitDate").value;
     var iscard = document.getElementById("card").checked;
     var card = "";
@@ -2685,13 +2845,35 @@ function addLoanFileDetails() {
     else {
         proper = "no";
     }
+    if(contactNo==""){
+        alert("Please Enter Contact No");
+        document.getElementById("contactNo").focus();
+    }
+    else if(custName==""){
+        alert("Please Enter Customer Name");
+        document.getElementById("custName").focus();
+    }
+    else if(add3==""){
+          alert("Please Enter Full Address");
+        document.getElementById("add3").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decidedAmt").focus();
+    }else if(amtPaid==""){
+          alert("Please Enter  Amount Paid");
+        document.getElementById("amtPaid").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmt").focus();
+        
+    }
+    else{
 
     getLoanDetails(docType,Loan, amt, pann,contactNo, custName, Dob1, add3, buss, sal2, com, post1, exp, qual, rem, info, decidedAmt, amtPaid, balAmt, refName,submitDate, card, voti, valid, lice, card2, card1, votin, rat, bill, resi, govt, lic, not, form1, file, bank, invest, pay, exist, bussi, curr, proper);
 }
-
-
-
-
+}
 
 
 
@@ -2941,20 +3123,55 @@ function getRationcardDetail() {
         talathiCert = "No";
     }
 
-  var decidedAmt = document.getElementById("decidedAmt").value;
+    var decidedAmt = document.getElementById("decidedAmt").value;
     var amtPaid = document.getElementById("amtPaid").value;
     var balAmt = document.getElementById("balAmt").value;
     var Remarknote = document.getElementById("Remarknote").value;
     var submitDate = document.getElementById("submitDate").value;
 
+	if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    
+    else if(address==""){
+          alert("Please Enter address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(amtPaid==""){
+          alert("Please Enter Amount Paid")
+        document.getElementById("amtPaid").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("balAmt").focus();
+        
+    }
+    
+    else{
 
 
 
-    getRationcard(docType,UpadationChange, custName, Dob,address, contactNo, natureBusiness, ylyAmt, gasName, gasGiverName, memFirstName1, memFirstName2, secMemName1, secMemName2, ThirdMemName1, ThirdMemName1, ThirdMemName2, fourthMemName1, fourthMemName2, fifthMemName1, fifthMemName2, Pancard, votingId, passportValid, DrivingLicn, adharCard, lightBill, adharCard1, voteId, socResiLet, govtBankPass, rentedNotary, ownrLightBillNoc, form16lstThreeyrs, ItFile, gasBook, talathiCert,decidedAmt,amtPaid,balAmt,Remarknote,submitDate);
+
+    getRationcard(docType,UpadationChange, custName, Dob,address, contactNo, natureBusiness, ylyAmt, 
+    gasName, gasGiverName, memFirstName1, memFirstName2, secMemName1, secMemName2, ThirdMemName1,
+    ThirdMemName1, ThirdMemName2, fourthMemName1, fourthMemName2, fifthMemName1, fifthMemName2, Pancard,
+    votingId, passportValid, DrivingLicn, adharCard, lightBill, adharCard1, voteId, socResiLet, govtBankPass,
+    rentedNotary, ownrLightBillNoc, form16lstThreeyrs, ItFile, gasBook, talathiCert,decidedAmt,
+    amtPaid,balAmt,Remarknote,submitDate);
 
 
-
+    }
 }
+
+
 function get2w() {
     var docType = document.getElementById("docType").value;
 
@@ -3040,52 +3257,60 @@ function get2w() {
         letterncb = "No";
 
     }
+     if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    
+    else if(address==""){
+          alert("Please Enter address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(amtPaid==""){
+          alert("Please Enter Amount Paid")
+        document.getElementById("amtPaid").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("balAmt").focus();
+    
+    }
+    
+    else{
+    
     
 
     add2w(docType,custName, middleName, lastName, address,contactNo,landmarkaddnear, vehicleno, whichbikedetail, modelyear,
             lstyrpolicydetail, bikecolour, loanhyponame, decidedAmt, amtPaid,balAmt,Remarknote,submitDate,photobike,oldrcbookxrx,oldinsrncecpyxrx,letterncb);
-
+    }
 }
+
+
 function addAdharCard()
 {
      var docType = document.getElementById("docType").value;
-     
     var oldAadharNo = document.getElementById("oldAadharNo").value;
-    //  alert(oldAadharNo);
     var custName = document.getElementById("custName").value;
-    //  alert(selfName);
-
     var contactNo = document.getElementById("contactNo").value;
-    //   alert(mobNo);
-
-    var fatherName = document.getElementById("fatherName").value;
-    //  alert(fatherName);
-
+    var fatherName = document.getElementById("fatherName").value
     var surName = document.getElementById("surName").value;
-//alert(surName);
     var husbandName = document.getElementById("husbandName").value;
-    //     alert(husbandName);
-
     var dob = document.getElementById("dob").value;
-    //  alert(dob);
-
     var address = document.getElementById("address").value;
-    //   alert(address);
-
     var changesNote = document.getElementById("changesNote").value;
     var changesNote1 = document.getElementById("changesNote1").value;
-   
     var decidedAmt = document.getElementById("decidedAmt").value;
-
     var amtPaid = document.getElementById("amtPaid").value;
-
     var balAmt = document.getElementById("balAmt").value;
-   
     var Remarknote = document.getElementById("Remarknote").value;
-    
     var submitDate = document.getElementById("submitDate").value;
-    
-    
     var isbirthCert = document.getElementById("birthCert").checked;
     var birthCert = "";
     if (isbirthCert)
@@ -3176,15 +3401,15 @@ function addAdharCard()
     {
         drivingLicence = "No";
     }
-    var isvotingId = document.getElementById("votingId").checked;
-    var votingId = "";
-    if (isvotingId)
+    var isvoteId = document.getElementById("voteId").checked;
+    var voteId = "";
+    if (isvoteId)
     {
-        votingId = "Yes";
+        voteId = "Yes";
     }
     else
     {
-        votingId = "No";
+        voteId = "No";
     }
     var isRestLetter = document.getElementById("RestLetter").checked;
     var RestLetter = "";
@@ -3307,48 +3532,81 @@ function addAdharCard()
         rentAgreement = "No";
     }
 
-    addAdharCardDetails(oldAadharNo, custName, contactNo, fatherName, husbandName, dob, address, changesNote, changesNote1, decidedAmt, amtPaid,balAmt,Remarknote,submitDate,
-birthCert, boardcert10, boardcert12, graduateCopy, higheredu, schoolcert, pancard, passport, drivingLicence, votingId, RestLetter, govtbankpass, licpolicy, renetedAgree,
+
+   if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    
+    else if(address==""){
+          alert("Please Enter address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(amtPaid==""){
+          alert("Please Enter Amount Paid")
+        document.getElementById("amtPaid").focus();
+        
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("balAmt").focus();
+        
+    }
+    
+    else{
+
+
+
+    addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherName, husbandName, dob, address, changesNote, changesNote1, decidedAmt, amtPaid,balAmt,Remarknote,submitDate,
+birthCert, boardcert10, boardcert12, graduateCopy, higheredu, schoolcert, pancard, passport, drivingLicence, voteId, RestLetter, govtbankpass, licpolicy, renetedAgree,
             rationcard, Votingid, Passportadd, Drivinglic, PassbookBank, lightbill, bankStat, rentAgreement);
 }
-function addlicdetails() {
-    
-var isdocType = document.getElementById("docType").value;
-var issubmitDate = document.getElementById("submitDate").value;
+}
 
-    var iscustName = document.getElementById("custName").value;
-    alert("custName"+iscustName);
-    var iscontactNo = document.getElementById("contactNo").value;
-    var isfn = document.getElementById("fn").value;
-    var isimhn = document.getElementById("imhn").value;
-    var isdob = document.getElementById("dob").value;
-    var isaddress = document.getElementById("address").value;
-    var isst = document.getElementById("st").value;
-    var ispt = document.getElementById("pt").value;
-    var isvm = document.getElementById("vm").value;
-    var isnone = document.getElementById("none").value;
-    var isht = document.getElementById("ht").value;
-    var iswt = document.getElementById("wt").value;
-    var isidm = document.getElementById("idm").value;
-    var isjod = document.getElementById("jod").value;
-    var isban = document.getElementById("ban").value;
-    var isbran = document.getElementById("bran").value;
-    var isifsc = document.getElementById("ifsc").value;
-    var isbankacc = document.getElementById("bankacc").value;
-    var isopno = document.getElementById("opno").value;
-    var isopno2 = document.getElementById("opno2").value;
-    var isocmpnm = document.getElementById("ocmpnm").value;
-    var isqyfmm = document.getElementById("qyfmm").value;
-    var isfrae = document.getElementById("frae").value;
-    var ismrae = document.getElementById("mrae").value;
-    var isbrae = document.getElementById("brae").value;
-    var issrae = document.getElementById("srae").value;
-    var ishwae = document.getElementById("hwae").value;
-    var iscdae = document.getElementById("cdae").value;
-    var isdecidedAmt = document.getElementById("decidedAmt").value;
-    var isamtPaid = document.getElementById("amtPaid").value;
-    var isbalAmt = document.getElementById("balAmt").value;
-    var isrene = document.getElementById("rene").value;
+
+function addlicdetails() {
+var docType = document.getElementById("docType").value;
+var submitDate = document.getElementById("submitDate").value;
+
+    var custName = document.getElementById("custName").value;
+    var contactNo = document.getElementById("contactNo").value;
+    var fn = document.getElementById("fn").value;
+    var imhn = document.getElementById("imhn").value;
+    var dob = document.getElementById("dob").value;
+    var address = document.getElementById("address").value;
+    var st = document.getElementById("st").value;
+    var pt = document.getElementById("pt").value;
+    var vm = document.getElementById("vm").value;
+    var none = document.getElementById("none").value;
+    var ht = document.getElementById("ht").value;
+    var wt = document.getElementById("wt").value;
+    var idm = document.getElementById("idm").value;
+    var jod = document.getElementById("jod").value;
+    var ban = document.getElementById("ban").value;
+    var bran = document.getElementById("bran").value;
+    var ifsc = document.getElementById("ifsc").value;
+    var bankacc = document.getElementById("bankacc").value;
+    var opno = document.getElementById("opno").value;
+    var opno2 = document.getElementById("opno2").value;
+    var ocmpnm = document.getElementById("ocmpnm").value;
+    var qyfmm = document.getElementById("qyfmm").value;
+    var frae = document.getElementById("frae").value;
+    var mrae = document.getElementById("mrae").value;
+    var brae = document.getElementById("brae").value;
+    var srae = document.getElementById("srae").value;
+    var hwae = document.getElementById("hwae").value;
+    var cdae = document.getElementById("cdae").value;
+    var decidedAmt = document.getElementById("decidedAmt").value;
+    var amtPaid = document.getElementById("amtPaid").value;
+    var balAmt = document.getElementById("balAmt").value;
+    var rene = document.getElementById("rene").value;
     
     var isbrcr = document.getElementById("brcr").checked;
     var brcr = "";
@@ -3539,7 +3797,7 @@ var issubmitDate = document.getElementById("submitDate").value;
     }
     var isvoigid = document.getElementById("voigid").checked;
     var voigid = "";
-    if (voigid)
+    if (isvoigid)
     {
         voigid = "yes";
 
@@ -3581,12 +3839,46 @@ var issubmitDate = document.getElementById("submitDate").value;
         irano = "no";
 
     }
+    
+     if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    else if(address==""){
+          alert("Please Enter Permanent Address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(balAmt==""){
+          alert("Please Enter Balance Amount")
+        document.getElementById("balAmt").focus();
+    
+    }else if(amtPaid==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("amtPaid").focus();
+        
+    }
+    else if(submitDate==""){
+          alert("Please Enter Submit Date")
+        document.getElementById("submitDate").focus();
+        
+    }
+    else{
 
-    addlic(isdocType,issubmitDate,iscustName, iscontactNo, isfn, isimhn, isdob, isaddress, isst, ispt, isvm, isnone,isht, iswt, isidm,
-            isjod, isban, isbran, isifsc,isbankacc, isopno, isopno2, isocmpnm, isqyfmm, isfrae,
-          ismrae, isbrae, issrae, ishwae, iscdae,isdecidedAmt, isamtPaid, isbalAmt, isrene,brcr,
+
+
+    addlic(custName,docType,submitDate,contactNo, fn, imhn, dob, address, st, pt, vm, none,ht, wt, idm,
+            jod, ban, bran, ifsc,bankacc, opno, opno2, ocmpnm, qyfmm, frae,thbd,
+          mrae, brae, srae, hwae, cdae, decidedAmt, amtPaid, balAmt, rene,brcr,
             sclvc, thbc, gc, ahecy, frif, sysp, adcd, pacr, drliva, vgid, pssprt,
             cdid, rncd, ltbl, arca, voigid, passp, bpass, irano);
+            }
             }
 
 function otherworkdetails()
@@ -3717,9 +4009,35 @@ function otherworkdetails()
     }
           var OTHERWORK =document.getElementById("OTHERWORK").value;
 
-      
+      if(custName==""){
+        alert("Please Enter Customer Name");
+        document.getElementById("custName").focus();
+    }
+      else if(contactNo==""){
+          alert("Please Enter Contact No");
+        document.getElementById("contactNo").focus();
+    }
+    
+    else if(ADDFULL==""){
+          alert("Please Enter Full Address");
+        document.getElementById("ADDFULL").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount");
+        document.getElementById("decidedAmt").focus();
+    }else if(advAmt==""){
+          alert("Please Enter Amount Paid");
+        document.getElementById("advAmt").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount");
+        document.getElementById("balAmt").focus();
+        
+    }
+    else{
         Viewotherwork(subDate,FormType,WorkName,custName,contactNo,dob,ADDFULL,NOTESOFREMARK,decidedAmt,advAmt,balAmt,REFRENCENAME,isPANCARD,
         isPASSPORTVALID,isDRIVLICNVALID,isVOTINGID,isAADHARCARD,isRATIONCARD,isLIGHTBILL,isAADHARCARD1,isSOCIETYRESILETTER,isGOVTBANKPASSBOOK,isLICPOLICY,isRENETDAGREEMENT,OTHERWORK);
 
 }
+  }
 

@@ -91,8 +91,13 @@ function getLoanDetails(docType, Loan, amt, pann, contactNo, custName, Dob1, add
         if (http.readyState == 4) {
 
             var response = http.responseText;
-
-            document.getElementById("formgroup").innerHTML = response;
+if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
 
     };
@@ -146,29 +151,29 @@ function getLoanDetails(docType, Loan, amt, pann, contactNo, custName, Dob1, add
 
 
 function addDrivingLicenceDetails(documentType, customerName, contactNo, son, presentaddress, permanentaddress, dateofbirth, education, bloodgroup, identificationmark, identificationmarks, decideAmnt, amountPaid, balAmnt, refName, submitDate, radioa, radiob, radioc, radiod, radioe, radiou, radiop) {
-    alert(documentType);
-    alert(customerName);
-    alert(contactNo);
-    alert(son);
-    alert(presentaddress);
-    alert(permanentaddress);
-    alert(dateofbirth);
-    alert(education);
-    alert(bloodgroup);
-    alert(identificationmark);
-    alert(identificationmarks);
-    alert(decideAmnt);
-    alert(amountPaid);
-    alert(balAmnt);
-    alert(refName);
-    alert(submitDate);
-    alert(radioa);
-    alert(radiob);
-    alert(radioc);
-    alert(radiod);
-    alert(radioe);
-    alert(radiou);
-    alert(radiop);
+//    alert(documentType);
+//    alert(customerName);
+//    alert(contactNo);
+//    alert(son);
+//    alert(presentaddress);
+//    alert(permanentaddress);
+//    alert(dateofbirth);
+//    alert(education);
+//    alert(bloodgroup);
+//    alert(identificationmark);
+//    alert(identificationmarks);
+//    alert(decideAmnt);
+//    alert(amountPaid);
+//    alert(balAmnt);
+//    alert(refName);
+//    alert(submitDate);
+//    alert(radioa);
+//    alert(radiob);
+//    alert(radioc);
+//    alert(radiod);
+//    alert(radioe);
+//    alert(radiou);
+//    alert(radiop);
 
     var http = createHTTPObj();
     http.onreadystatechange = function()
@@ -178,7 +183,13 @@ function addDrivingLicenceDetails(documentType, customerName, contactNo, son, pr
 
             var response = http.responseText;
 
-            document.getElementById("formgroup").innerHTML = response;
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
 
     };
@@ -222,7 +233,13 @@ function addmediclaimDetails(documentType,oldPolicyNo, companyName, renewDate, c
 
             var response = http.responseText;
 
-            document.getElementById("formgroup").innerHTML = response;
+           if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
 
     };
@@ -270,6 +287,7 @@ function addmediclaimDetails(documentType,oldPolicyNo, companyName, renewDate, c
             + '&submitDate=' + encodeURIComponent(submitDate)
             + '&actionFrom=' + encodeURIComponent('addmediclaim'));
 }
+
 
 
 
@@ -327,7 +345,12 @@ function addSalaryIt(docType,itType,panNo,custName,surName,dateOfBirth,contactNo
         if (http.readyState == 4) {
 
             var response = http.responseText;
-
+                if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
             document.getElementById("formgroup").innerHTML = response;
         }
 
@@ -383,13 +406,11 @@ function addSalaryIt(docType,itType,panNo,custName,surName,dateOfBirth,contactNo
 }
 
 
-
-
 function  addFoodLicenceDetails(documentType, food, renewdate, customerName, contactNo, addfull, nature, empquantity,
         prop, partner, water, product, turnover, ifr, changes, decideAmnt, amountPaid,
         balAmnt, refName, submitDate, adhr, vot, pass, dri, pan, light, rent, let, map, gum,
         noc, shop, AB, chargesa, chargesb, chargesc) {
-    alert(food);
+  //  alert(food);
     var http = createHTTPObj();
     http.onreadystatechange = function()
     {
@@ -397,8 +418,13 @@ function  addFoodLicenceDetails(documentType, food, renewdate, customerName, con
         if (http.readyState == 4) {
 
             var response = http.responseText;
-
-            document.getElementById("formgroup").innerHTML = response;
+if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
     };
 
@@ -445,88 +471,6 @@ function  addFoodLicenceDetails(documentType, food, renewdate, customerName, con
 
 }
 
-function addlic(issnf, ismn, isfn, isimhn, isdob, isflad, isst, ispt, isvm, isnone,isht, iswt, isidm,
-            isjod, isban, isbran, isifsc,isbankacc, isopno, isopno2, isocmpnm, isqyfmm, isfrae,
-          ismrae, isbrae, issrae, ishwae, iscdae,isdpat, isapat, isblat, isrene,brcr,
-            sclvc, thbc, gc, ahecy, frif, sysp, adcd, pacr, drliva, vgid, pssprt,
-            cdid, rncd, ltbl, arca, voigid, passp, bpass, irano)  
-            
-{
- 
-    
-    
-    
-var http = createHTTPObj();
-    http.onreadystatechange = function ()
-    {
-
-        if (http.readyState == 4) {
-
-            var response = http.responseText;
-
-            document.getElementById("formgroup").innerHTML = response;
-     }
-};
-
-    http.open('POST', 'aadharCard.htm', true);
-    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('&issnf=' + encodeURIComponent(issnf)
-    +'&ismn=' + encodeURIComponent(ismn)
-    +'&isfn=' + encodeURIComponent(isfn)
-    +'&isimhn=' + encodeURIComponent(isimhn)
-    +'&isdob=' + encodeURIComponent(isdob)
-    +'&isflad=' + encodeURIComponent(isflad)
-    +'&isst=' + encodeURIComponent(isst)
-    +'&ispt=' + encodeURIComponent(ispt)
-    +'&isvm=' + encodeURIComponent(isvm)
-    +'&isnone=' + encodeURIComponent(isnone)
-    +'&isht=' + encodeURIComponent(isht)
-    +'&iswt=' + encodeURIComponent(iswt)
-    +'&isidm=' + encodeURIComponent(isidm)
-    +'&isjod=' + encodeURIComponent(isjod)
-    +'&isban=' + encodeURIComponent(isban)
-    +'&isbran=' + encodeURIComponent(isbran)
-    +'&isifsc=' + encodeURIComponent(isifsc)
-    +'&isbankacc=' + encodeURIComponent(isbankacc)
-    +'&isopno=' + encodeURIComponent(isopno)
-    
-    +'&isopno2=' + encodeURIComponent(isopno2)
-    +'&isocmpnm=' + encodeURIComponent(isocmpnm)
-    +'&isqyfmm=' + encodeURIComponent(isqyfmm)
-    +'&isfrae=' + encodeURIComponent(isfrae)
-    +'&ismrae=' + encodeURIComponent(ismrae)
-    +'&isbrae=' + encodeURIComponent(isbrae)
-    +'&issrae=' + encodeURIComponent(issrae)
-    +'&ishwae=' + encodeURIComponent(ishwae)
-    +'&iscdae=' + encodeURIComponent(iscdae)
-    +'&isdpat=' + encodeURIComponent(isdpat)
-    +'&isapat=' + encodeURIComponent(isapat)
-    +'&isblat=' + encodeURIComponent(isblat)
-    
-    +'&ispacr=' + encodeURIComponent(pacr)
-    +'&isrene=' + encodeURIComponent(isrene)
-    +'&brcr=' + encodeURIComponent(brcr)
-    +'&sclvc=' + encodeURIComponent(sclvc)
-    +'&thbc=' + encodeURIComponent(thbc)
-    +'&gc=' + encodeURIComponent(gc)
-    +'&ahecy=' + encodeURIComponent(ahecy)
-    +'&frif=' + encodeURIComponent(frif)
-    +'&sysp=' + encodeURIComponent(sysp)
-    +'&adcd=' + encodeURIComponent(adcd)
-    +'&pacr=' + encodeURIComponent(pacr)
-    +'&drliva=' + encodeURIComponent(drliva)
-    +'&vgid=' + encodeURIComponent(vgid)
-    +'&pssprt=' + encodeURIComponent(pssprt)
-    +'&cdid=' + encodeURIComponent(cdid)
-    +'&rncd=' + encodeURIComponent(rncd)
-    +'&ltbl=' + encodeURIComponent(ltbl)
-    +'&arca=' + encodeURIComponent(arca)
-    +'&voigid=' + encodeURIComponent(voigid)
-    +'&passp=' + encodeURIComponent(passp)
-    +'&bpass=' + encodeURIComponent(bpass)
-    +'&irano=' + encodeURIComponent(irano)
-    + '&actionFrom=' + encodeURIComponent('addlic1'));
-}
 
 function addGumasta(licenceNo, renewDate, companyName, address, natureOfBuisness, employeeQty, propertiorName, renew1, renew2, renew3, decidedAmtRs, decidedAmtRs1, creditAmtRs, creditAmtRs1, balanceAmtRs, balanceAmtRs1, referanceName, referanceName1, lightBill, rentAgreement, pancard, drivingLicence, passport, votingCard, adharCard, decidedamt, decidedamt1, creditamt, creditamt1, balanceamt, balanceamt1, reference, reference1)
 {
@@ -844,7 +788,13 @@ alert("textend"+submitDate);     */
 
             var response = http.responseText;
 
-            document.getElementById("formgroup").innerHTML = response;
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
 
     };
@@ -1313,32 +1263,7 @@ function openPancard()
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     http.send('&actionFrom=' + encodeURIComponent('openMediclaim'));
     
-    
-    
-    
-}
-{
-    
-     var http = createHTTPObj();
-    http.onreadystatechange = function ()
-    {
-
-        if (http.readyState == 4) {
-
-            var response = http.responseText;
-           
-            document.getElementById("containerfluid").innerHTML = response;
-        }
-
-    };
-    http.open('POST', 'aadharCard.htm', true);
-    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('&actionFrom=' + encodeURIComponent('openLoanFile'));
-    
-    
-    
-    
-}
+    }
  function openSalaryIt()
 {
     
@@ -1385,6 +1310,9 @@ function openFoodLicence()
     
     
 }
+
+
+
 function addPancard(docType,CorrectionForm, OldpanNo, custName, FatherName, SurName, HusbandName, Dob, address, contactNo, BirthCert, sscCert, hscCert, marriageCert, magisrateCharge, adharCard, passprtValid, drivngLicn, votingId, domicileCert, adharCard1, voteId, passportValid, drivingLicvalid, bankPaPhoto, corpeterLetter, notory, addProof, domCert, decidedAmt,amtPaid,balAmt,Remarknote,submitDate)
 {
 
@@ -1397,6 +1325,13 @@ function addPancard(docType,CorrectionForm, OldpanNo, custName, FatherName, SurN
         if (http.readyState == 4) {
 
             var response = http.responseText;
+             
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
 
             document.getElementById("formgroup").innerHTML = response;
         }
@@ -1432,11 +1367,11 @@ function addPancard(docType,CorrectionForm, OldpanNo, custName, FatherName, SurN
             + '&notory=' + encodeURIComponent(notory)
             + '&addProof=' + encodeURIComponent(addProof)
             + '&domCert=' + encodeURIComponent(domCert)
-            + '&DecidedAmtRs1=' + encodeURIComponent(decidedAmt)
-            + '&ecidedAmtRs2=' + encodeURIComponent(amtPaid)
-            + '&CreditAmtRs1=' + encodeURIComponent(balAmt)
-            + '&CreditAmtRs2=' + encodeURIComponent(Remarknote)
-            + '&BalanceAmtRs1=' + encodeURIComponent(submitDate)
+            + '&decidedAmt=' + encodeURIComponent(decidedAmt)
+            + '&amtPaid=' + encodeURIComponent(amtPaid)
+            + '&balAmt=' + encodeURIComponent(balAmt)
+            + '&Remarknote=' + encodeURIComponent(Remarknote)
+            + '&submitDate=' + encodeURIComponent(submitDate)
         
             + '&actionFrom=' + encodeURIComponent('addPancard'));
 
@@ -1445,7 +1380,15 @@ function addPancard(docType,CorrectionForm, OldpanNo, custName, FatherName, SurN
 
 
 }
-function getRationcard(docType,UpadationChange, custName, Dob, address, contactNo, natureBusiness, ylyAmt, gasName, gasGiverName, memFirstName1, memFirstName2, secMemName1, secMemName2, ThirdMemName1, ThirdMemName1, ThirdMemName2, fourthMemName1, fourthMemName2, fifthMemName1, fifthMemName2, Pancard, votingId, passportValid, DrivingLicn, adharCard, lightBill, votingId, adharCard1,voteId ,socResiLet, govtBankPass, rentedNotary, ownrLightBillNoc, form16lstThreeyrs, ItFile, gasBook, talathiCert,decidedAmt,amtPaid,balAmt,Remarknote,submitDate)
+
+
+
+function getRationcard(docType,UpadationChange, custName, Dob,address, contactNo, natureBusiness, ylyAmt, 
+    gasName, gasGiverName, memFirstName1, memFirstName2, secMemName1, secMemName2, ThirdMemName1,
+    ThirdMemName1, ThirdMemName2, fourthMemName1, fourthMemName2, fifthMemName1, fifthMemName2, Pancard,
+    votingId, passportValid, DrivingLicn, adharCard, lightBill, adharCard1, voteId, socResiLet, govtBankPass,
+    rentedNotary, ownrLightBillNoc, form16lstThreeyrs, ItFile, gasBook, talathiCert,decidedAmt,
+    amtPaid,balAmt,Remarknote,submitDate)
 {
 
 
@@ -1456,13 +1399,23 @@ function getRationcard(docType,UpadationChange, custName, Dob, address, contactN
         if (http.readyState == 4) {
 
         var response = http.responseText;
+        
+         
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+        
+        
                 document.getElementById("formgroup").innerHTML = response;
         }
        
     };
     http.open('POST','aadharCard.htm', true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('&UpadationChange=' + encodeURIComponent(UpadationChange)
+    http.send('UpadationChange=' + encodeURIComponent(UpadationChange)
             + '&docType=' + encodeURIComponent(docType)
             + '&custName=' + encodeURIComponent(custName)
             + '&Dob=' + encodeURIComponent(Dob)
@@ -1470,7 +1423,7 @@ function getRationcard(docType,UpadationChange, custName, Dob, address, contactN
             + '&contactNo=' + encodeURIComponent(contactNo)
             + '&natureBusiness=' + encodeURIComponent(natureBusiness)
             + '&ylyAmt=' + encodeURIComponent(ylyAmt)
-            + '&contactNo=' + encodeURIComponent(contactNo)
+            
             + '&gasName=' + encodeURIComponent(gasName)
             + '&gasGiverName=' + encodeURIComponent(gasGiverName)
             + '&memFirstName1=' + encodeURIComponent(memFirstName1)
@@ -1501,15 +1454,18 @@ function getRationcard(docType,UpadationChange, custName, Dob, address, contactN
             + '&ItFile=' + encodeURIComponent(ItFile)
             + '&gasBook=' + encodeURIComponent(gasBook)
             + '&talathiCert=' + encodeURIComponent(talathiCert)
-            + '&DecidedAmtRs1=' + encodeURIComponent(decidedAmt)
-            + '&ecidedAmtRs2=' + encodeURIComponent(amtPaid)
-            + '&CreditAmtRs1=' + encodeURIComponent(balAmt)
-            + '&CreditAmtRs2=' + encodeURIComponent(Remarknote)
-            + '&BalanceAmtRs1=' + encodeURIComponent(submitDate)
+            + '&decidedAmt=' + encodeURIComponent(decidedAmt)
+            + '&amtPaid=' + encodeURIComponent(amtPaid)
+            + '&balAmt=' + encodeURIComponent(balAmt)
+            + '&Remarknote=' + encodeURIComponent(Remarknote)
+            + '&submitDate=' + encodeURIComponent(submitDate)
 
             + '&actionFrom=' + encodeURIComponent('addRationcard'));
 
 }
+
+
+
 function add2w(docType,custName, middleName, lastName, address,contactNo,landmarkaddnear, vehicleno, whichbikedetail, modelyear,
             lstyrpolicydetail, bikecolour, loanhyponame, decidedAmt, amtPaid,balAmt,Remarknote,submitDate,photobike,oldrcbookxrx,oldinsrncecpyxrx,letterncb)
       {
@@ -1522,6 +1478,14 @@ function add2w(docType,custName, middleName, lastName, address,contactNo,landmar
 
             var response = http.responseText;
 
+          var response = http.responseText;
+             
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
             document.getElementById("formgroup").innerHTML = response;
         }
     };
@@ -1553,48 +1517,13 @@ function add2w(docType,custName, middleName, lastName, address,contactNo,landmar
          
             + '&actionFrom=' + encodeURIComponent('add2w1'));
 }
-function addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherName, husbandName, dob, address, changesNote, changesNote1, decidedAmt, amtPaid,balAmt,Remarknote,submitDate, birthCert, boardcert10, boardcert12, graduateCopy, higheredu, schoolcert, pancard, passport, drivingLicence, votingId, RestLetter, govtbankpass, licpolicy, renetedAgree,
-        rationcard, Votingid, Passportadd, Drivinglic, PassbookBank, lightbill, bankStat, rentAgreement)
+
+
+function addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherName, husbandName, dob, address, changesNote, changesNote1, decidedAmt, amtPaid,balAmt,Remarknote,submitDate,
+birthCert, boardcert10, boardcert12, graduateCopy, higheredu, schoolcert, pancard, passport, drivingLicence, voteId, RestLetter, govtbankpass, licpolicy, renetedAgree,
+            rationcard, Votingid, Passportadd, Drivinglic, PassbookBank, lightbill, bankStat, rentAgreement)
 {
-
-    /*   alert(oldAadharNo);
-     alert(selfName);
-     alert(mobNo);
-     alert(fatherName);
-     alert(husbandName);
-     alert(dob);
-     alert(address);
-     alert(changesNote);
-     alert(changesNote1);
-     alert(changesNote2);
-     alert(decidedAmtRs);
-     alert(advamt);
-     alert(balamt);
-     alert(referanceName);
-     alert("1"+birthCert);
-     alert("2"+boardcert10);
-     alert("3"+boardcert12);
-     alert("4"+graduateCopy);
-     alert("5"+higheredu);
-     alert("6"+schoolcert);
-     alert("7"+pancard);
-     alert("8"+passport);
-     alert("9"+drivingLicence);
-     alert("10"+votingId);
-     alert("11"+RestLetter);
-     alert("12"+govtbankpass);
-     alert("13"+licpolicy);
-     alert("14"+renetedAgree);
-     alert("15"+rationcard);
-     alert("16"+Votingid);
-     alert("17"+Passportadd);
-     alert("18"+Drivinglic);
-     alert("19"+PassbookBank);
-     alert("20"+lightbill);
-     alert("21"+bankStat);
-     alert("22"+rentAgreement);
-     */
-
+    
     var http = createHTTPObj();
     http.onreadystatechange = function ()
     {
@@ -1602,8 +1531,15 @@ function addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherNam
         if (http.readyState == 4) {
 
             var response = http.responseText;
+            
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
 
-            document.getElementById("formgroup").innerHTML = response;
+          document.getElementById("formgroup").innerHTML = response;
         }
 
     };
@@ -1633,7 +1569,7 @@ function addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherNam
             + '&pancard=' + encodeURIComponent(pancard)
             + '&passport=' + encodeURIComponent(passport)
             + '&drivingLicence=' + encodeURIComponent(drivingLicence)
-            + '&votingId=' + encodeURIComponent(votingId)
+            + '&voteId=' + encodeURIComponent(voteId)
             + '&RestLetter=' + encodeURIComponent(RestLetter)
             + '&govtbankpass=' + encodeURIComponent(govtbankpass)
             + '&licpolicy=' + encodeURIComponent(licpolicy)
@@ -1649,14 +1585,18 @@ function addAdharCardDetails(docType,oldAadharNo, custName, contactNo, fatherNam
             + '&actionFrom=' + encodeURIComponent('addaadharCardDetail'));
 
 }
+
+
+
+
 function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear, MotorCyclewithgear, InvalidCarriages, LightMotorVehicle,
         MediumMotorCycle, HeavygoodsVehicle, HeavyPassengerMotorVehicle, RoadRollers, MotorVehicleoffollowingdescription,
-        custName, Son, PermanentAddress, TemporaryAddress, datepicker, EducationalQualification, IdentificationMark, BloodGroupwithRHfactor,
+        custName, Son, address, TemporaryAddress,contactNo, datepicker, EducationalQualification, IdentificationMark, BloodGroupwithRHfactor,
         decidedAmt, advAmt , balAmt, refrencename, Iholdaneffectivedrivinglicencetodrive, Particulars, Particularsof, Haveyoubeen, IencloseMedical, issuedbythe, IencloseDriving, issuedby)
 
 {
 
-
+    //alert(subDate);
     var http = createHTTPObj();
     http.onreadystatechange = function ()
     {
@@ -1664,7 +1604,7 @@ function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear
         if (http.readyState == 4) {
 
             var response = http.responseText;
-         
+           // alert("response"+response)
             if((response).indexOf("Save Successfully") >=0){
                 alert("Record Save Successfully"); 
             }
@@ -1677,8 +1617,9 @@ function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear
     };
     http.open('POST', 'aadharCard.htm', true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('&TheLicensingAuthority=' + encodeURIComponent(TheLicensingAuthority)
-            + '&subDate=' + encodeURIComponent(subDate)
+    http.send(
+            + 'subDate=' + encodeURIComponent(subDate)
+            + '&TheLicensingAuthority=' + encodeURIComponent(TheLicensingAuthority)
             + '&MotorCyclewithoutgear=' + encodeURIComponent(MotorCyclewithoutgear)
             + '&MotorCyclewithgear=' + encodeURIComponent(MotorCyclewithgear)
             + '&InvalidCarriages=' + encodeURIComponent(InvalidCarriages)
@@ -1691,8 +1632,9 @@ function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear
             + '&MotorVehicleoffollowingdescription=' + encodeURIComponent(MotorVehicleoffollowingdescription)
             + '&custName=' + encodeURIComponent(custName)
             + '&Son=' + encodeURIComponent(Son)
-            + '&PermanentAddress=' + encodeURIComponent(PermanentAddress)
+            + '&address=' + encodeURIComponent(address)
             + '&TemporaryAddress=' + encodeURIComponent(TemporaryAddress)
+             + '&contactNo=' + encodeURIComponent(contactNo)
             + '&datepicker=' + encodeURIComponent(datepicker)
             + '&EducationalQualification=' + encodeURIComponent(EducationalQualification)
             + '&IdentificationMark=' + encodeURIComponent(IdentificationMark)
@@ -1713,69 +1655,70 @@ function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear
             + '&actionFrom=' + encodeURIComponent('addgetGrantRenewal1'));
 
 }
-function addlic(iscustName,isdocType,issubmitDate,iscontactNo, isfn, isimhn, isdob, isaddress, isst, ispt, isvm, isnone,isht, iswt, isidm,
-            isjod, isban, isbran, isifsc,isbankacc, isopno, isopno2, isocmpnm, isqyfmm, isfrae,
-          ismrae, isbrae, issrae, ishwae, iscdae,isdecidedAmt, isamtPaid, isbalAmt, isrene,brcr,
+
+
+function addlic(custName,docType,submitDate,contactNo, fn, imhn, dob, address, st, pt, vm, none,ht, wt, idm,
+            jod, ban, bran, ifsc,bankacc, opno, opno2, ocmpnm, qyfmm, frae,thbd,
+          mrae, brae, srae, hwae, cdae, decidedAmt, amtPaid, balAmt, rene,brcr,
             sclvc, thbc, gc, ahecy, frif, sysp, adcd, pacr, drliva, vgid, pssprt,
-            cdid, rncd, ltbl, arca, voigid, passp, bpass, irano)
-
-{
-
-
-
-
+            cdid, rncd, ltbl, arca, voigid, passp, bpass, irano){
+               
     var http = createHTTPObj();
     http.onreadystatechange = function ()
     {
-
         if (http.readyState == 4) {
-
             var response = http.responseText;
-
+             //   List grantrenewallist = grServices.viewgrantrenewalDetailsCustomerName(custName);
+        if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
             document.getElementById("formgroup").innerHTML = response;
         }
     };
 
     http.open('POST', 'aadharCard.htm', true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('iscustName=' + encodeURIComponent(iscustName)
-            + '&isdocType=' + encodeURIComponent(isdocType)
-    + '&issubmitDate=' + encodeURIComponent(issubmitDate)
-    + '&iscontactNo=' + encodeURIComponent(iscontactNo)
-            + '&isfn=' + encodeURIComponent(isfn)
-            + '&isimhn=' + encodeURIComponent(isimhn)
-            + '&isdob=' + encodeURIComponent(isdob)
-            + '&isaddress=' + encodeURIComponent(isaddress)
-            + '&isst=' + encodeURIComponent(isst)
-            + '&ispt=' + encodeURIComponent(ispt)
-            + '&isvm=' + encodeURIComponent(isvm)
-            + '&isnone=' + encodeURIComponent(isnone)
-            + '&isht=' + encodeURIComponent(isht)
-            + '&iswt=' + encodeURIComponent(iswt)
-            + '&isidm=' + encodeURIComponent(isidm)
-            + '&isjod=' + encodeURIComponent(isjod)
-            + '&isban=' + encodeURIComponent(isban)
-    
-            + '&isbran=' + encodeURIComponent(isbran)
-            + '&isifsc=' + encodeURIComponent(isifsc)
-            + '&isbankacc=' + encodeURIComponent(isbankacc)
-            + '&isopno=' + encodeURIComponent(isopno)
+    http.send('custName=' + encodeURIComponent(custName)
+            + '&docType=' + encodeURIComponent(docType)
+            + '&submitDate=' + encodeURIComponent(submitDate)
+            + '&contactNo=' + encodeURIComponent(contactNo)
+            + '&fn=' + encodeURIComponent(fn)
+            + '&imhn=' + encodeURIComponent(imhn)
+            + '&dob=' + encodeURIComponent(dob)
+            + '&address=' + encodeURIComponent(address)
+            + '&st=' + encodeURIComponent(st)
+            + '&pt=' + encodeURIComponent(pt)
+            + '&vm=' + encodeURIComponent(vm)
+            + '&none=' + encodeURIComponent(none)
+            + '&ht=' + encodeURIComponent(ht)
+            + '&wt=' + encodeURIComponent(wt)
+            + '&idm=' + encodeURIComponent(idm)
+            + '&jod=' + encodeURIComponent(jod)
+            + '&ban=' + encodeURIComponent(ban)
+     + '&thbd=' + encodeURIComponent(thbd)
+            + '&bran=' + encodeURIComponent(bran)
+            + '&ifsc=' + encodeURIComponent(ifsc)
+            + '&bankacc=' + encodeURIComponent(bankacc)
+            + '&opno=' + encodeURIComponent(opno)
 
-            + '&isopno2=' + encodeURIComponent(isopno2)
-            + '&isocmpnm=' + encodeURIComponent(isocmpnm)
-            + '&isqyfmm=' + encodeURIComponent(isqyfmm)
-            + '&isfrae=' + encodeURIComponent(isfrae)
-            + '&ismrae=' + encodeURIComponent(ismrae)
-            + '&isbrae=' + encodeURIComponent(isbrae)
-            + '&issrae=' + encodeURIComponent(issrae)
-            + '&ishwae=' + encodeURIComponent(ishwae)
-            + '&iscdae=' + encodeURIComponent(iscdae)
-            + '&isdecidedAmt=' + encodeURIComponent(isdecidedAmt)
-            + '&isamtPaid=' + encodeURIComponent(isamtPaid)
-            + '&isbalAmt=' + encodeURIComponent(isbalAmt)
+            + '&opno2=' + encodeURIComponent(opno2)
+            + '&ocmpnm=' + encodeURIComponent(ocmpnm)
+            + '&qyfmm=' + encodeURIComponent(qyfmm)
+            + '&frae=' + encodeURIComponent(frae)
+            + '&mrae=' + encodeURIComponent(mrae)
+            + '&brae=' + encodeURIComponent(brae)
+            + '&srae=' + encodeURIComponent(srae)
+            + '&hwae=' + encodeURIComponent(hwae)
+            + '&cdae=' + encodeURIComponent(cdae)
+            + '&decidedAmt=' + encodeURIComponent(decidedAmt)
+            + '&amtPaid=' + encodeURIComponent(amtPaid)
+            + '&balAmt=' + encodeURIComponent(balAmt)
 
-            + '&ispacr=' + encodeURIComponent(pacr)
-            + '&isrene=' + encodeURIComponent(isrene)
+            + '&pacr=' + encodeURIComponent(pacr)
+            + '&rene=' + encodeURIComponent(rene)
             + '&brcr=' + encodeURIComponent(brcr)
             + '&sclvc=' + encodeURIComponent(sclvc)
             + '&thbc=' + encodeURIComponent(thbc)
@@ -1798,6 +1741,9 @@ function addlic(iscustName,isdocType,issubmitDate,iscontactNo, isfn, isimhn, isd
             + '&irano=' + encodeURIComponent(irano)
             + '&actionFrom=' + encodeURIComponent('addlic1'));
 }
+
+
+
 function Viewotherwork(subDate,FormType,WorkName,custName,contactNo,dob,ADDFULL,NOTESOFREMARK,decidedAmt,advAmt,balAmt,REFRENCENAME,isPANCARD,
         isPASSPORTVALID,isDRIVLICNVALID,isVOTINGID,isAADHARCARD,isRATIONCARD,isLIGHTBILL,isAADHARCARD1,isSOCIETYRESILETTER,isGOVTBANKPASSBOOK,isLICPOLICY,isRENETDAGREEMENT,OTHERWORK)
 {
@@ -1810,7 +1756,13 @@ function Viewotherwork(subDate,FormType,WorkName,custName,contactNo,dob,ADDFULL,
 
             var response = http.responseText;
 
-            document.getElementById("formgroup").innerHTML = response;
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+          
         }
 
     };
