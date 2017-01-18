@@ -57,6 +57,7 @@ import services.foodServices;
 import services.drivingServices;
 import services.mediclaimServices;
 import services.salaryItServices;
+import validator.LogData;
 
 /**
  *
@@ -77,7 +78,7 @@ private mediclaimServices mediclaimservices;
     private foodServices foodservice;
     private LoanService loanServices;
 
- 
+    private LogData logData = new LogData();
 
     public void setOthServices(otherworkServices othServices) {
         this.othServices = othServices;
@@ -175,6 +176,11 @@ private mediclaimServices mediclaimservices;
         HttpSession session = request.getSession(true);
         sessionId = session.getId();
         action = ServletRequestUtils.getStringParameter(request, "actionFrom");
+         String modulePath = logData.getModulePath();
+         
+//         File currDir = new File(".");
+//    String path = currDir.getAbsolutePath();
+        
 
         if (action.equals("addGumastaDetail")) {
 
@@ -221,7 +227,7 @@ private mediclaimServices mediclaimservices;
         if (action.equals("generatereportdetails")) {
             String SLASH="/";
              String columnHeader = "Sr.No,Customer Name,Contact  No,Address ,Decided Amount,Credited Amount ,Balance Amount";
-            String pdfFileName = "C:\\Users\\ravi\\Desktop\\Sagar\\A-Z2\\web\\";
+            String pdfFileName = modulePath;
              String custName = ServletRequestUtils.getStringParameter(request, "custName");
             String contactNo = ServletRequestUtils.getStringParameter(request, "contactNo");
             String subDate = ServletRequestUtils.getStringParameter(request, "subDate");
@@ -253,7 +259,7 @@ private mediclaimServices mediclaimservices;
         
          if (action.equals("showPdf")) {
                String SLASH="/";
-             String pdfFileName = "C:\\Users\\ravi\\Desktop\\Sagar\\A-Z2\\web\\";
+             String pdfFileName = modulePath;
              pdfFileName= pdfFileName  + "Reports" + SLASH + "StudentUnderGuideReport.pdf";
             File file = new File(pdfFileName);
                         System.out.println("Looking for file " + file.getAbsolutePath());
@@ -713,7 +719,7 @@ private mediclaimServices mediclaimservices;
             li.setIsfn(isfn);
             li.setIsimhn(isimhn);
             li.setIsdob(isdob);
-            li.setIsaddress(isaddress);
+            li.setAddress(isaddress);
             li.setIsst(isst);
             li.setIspt(ispt);
             li.setIsvm(isvm);
@@ -947,6 +953,7 @@ private mediclaimServices mediclaimservices;
 
         
         if (action.equals("addgetGrantRenewal1")) {
+            
             String subDate = ServletRequestUtils.getStringParameter(request, "subDate");
             String TheLicensingAuthority = ServletRequestUtils.getStringParameter(request, "TheLicensingAuthority");
             String MotorCyclewithoutgear = ServletRequestUtils.getStringParameter(request, "MotorCyclewithoutgear");
@@ -1356,7 +1363,13 @@ private mediclaimServices mediclaimservices;
 
       
 
-        
+         
+if (action.equals("openIndex"))
+{
+ mv.setViewName("A_To_Z");
+        return mv;
+
+}       
         
         
 if (action.equals("openRationCard"))
@@ -1614,7 +1627,7 @@ if (action.equals("openFoodLicence"))
             String date2 = ServletRequestUtils.getStringParameter(request, "date2");
             String bamt = ServletRequestUtils.getStringParameter(request, "balAmt");
             String date3 = ServletRequestUtils.getStringParameter(request, "date3");
-            String amountPaid = ServletRequestUtils.getStringParameter(request, "amtPaid");
+            String amtPaid = ServletRequestUtils.getStringParameter(request, "amtPaid");
             String date4 = ServletRequestUtils.getStringParameter(request, "date4");
             String submitDate = ServletRequestUtils.getStringParameter(request, "submitDate");
 
@@ -1695,7 +1708,7 @@ if (action.equals("openFoodLicence"))
             pass.setDate2(date2);
             pass.setBalAmt(bamt);
             pass.setDate3(date3);
-            pass.setAmtPaid(amountPaid);
+            pass.setAmtPaid(amtPaid);
             pass.setDate4(date4);
             pass.setSubmitDate(submitDate);
 

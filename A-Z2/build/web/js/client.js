@@ -242,7 +242,7 @@ function addPassPortDetails() {
   function addGrantRenewal(){
     
     var subDate = document.getElementById("subDate").value;
-    alert(subDate);
+   
     var TheLicensingAuthority = document.getElementById("TheLicensingAuthority").value;
     var isMotorCyclewithoutgear = document.getElementById("MotorCyclewithoutgear").checked;
     var MotorCyclewithoutgear = "";
@@ -337,6 +337,7 @@ function addPassPortDetails() {
 
     }
     var custName = document.getElementById("custName").value;
+    
     var Son = document.getElementById("Son").value;
     var PermanentAddress = document.getElementById("PermanentAddress").value;
     var TemporaryAddress = document.getElementById("TemporaryAddress").value;
@@ -361,6 +362,28 @@ function addPassPortDetails() {
     var issuedbythe = document.getElementById("issuedbythe").value;
     var IencloseDriving = document.getElementById("IencloseDriving").value;
     var issuedby = document.getElementById("issuedby").value;
+    
+    if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    else if(PermanentAddress==""){
+          alert("Please Enter Permanent Address")
+        document.getElementById("PermanentAddress").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(advAmt==""){
+          alert("Please Enter Advacne Amount")
+        document.getElementById("advAmt").focus();
+    
+    }else if(balAmt==""){
+          alert("Please Enter Balance amount")
+        document.getElementById("balAmt").focus();
+        
+    }
+    else{
     addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear, MotorCyclewithgear, InvalidCarriages, LightMotorVehicle,
             MediumMotorCycle, HeavygoodsVehicle, HeavyPassengerMotorVehicle, RoadRollers, MotorVehicleoffollowingdescription,
             custName, Son, PermanentAddress, TemporaryAddress, datepicker, EducationalQualification, IdentificationMark, BloodGroupwithRHfactor,
@@ -368,281 +391,281 @@ function addPassPortDetails() {
 
 
 }
-  
+  } 
 
-function addlicdetails() {
-
-    var issnf = document.getElementById("snf").value;
-    var ismn = document.getElementById("mn").value;
-    var isfn = document.getElementById("fn").value;
-    var isimhn = document.getElementById("imhn").value;
-    var isdob = document.getElementById("dob").value;
-    var isflad = document.getElementById("flad").value;
-    var isst = document.getElementById("st").value;
-    var ispt = document.getElementById("pt").value;
-    var isvm = document.getElementById("vm").value;
-    var isnone = document.getElementById("none").value;
-    var isht = document.getElementById("ht").value;
-    var iswt = document.getElementById("wt").value;
-    var isidm = document.getElementById("idm").value;
-    var isjod = document.getElementById("jod").value;
-    var isban = document.getElementById("ban").value;
-    var isbran = document.getElementById("bran").value;
-    var isifsc = document.getElementById("ifsc").value;
-    var isbankacc = document.getElementById("bankacc").value;
-    var isopno = document.getElementById("opno").value;
-    var isopno2 = document.getElementById("opno2").value;
-    var isocmpnm = document.getElementById("ocmpnm").value;
-    var isqyfmm = document.getElementById("qyfmm").value;
-    var isfrae = document.getElementById("frae").value;
-    var ismrae = document.getElementById("mrae").value;
-    var isbrae = document.getElementById("brae").value;
-    var issrae = document.getElementById("srae").value;
-    var ishwae = document.getElementById("hwae").value;
-    var iscdae = document.getElementById("cdae").value;
-    var isdpat = document.getElementById("dpat").value;
-    var isapat = document.getElementById("apat").value;
-    var isblat = document.getElementById("blat").value;
-    var isrene = document.getElementById("rene").value;
-    
-    var isbrcr = document.getElementById("brcr").checked;
-    var brcr = "";
-    if (isbrcr)
-    {
-        brcr = "yes";
-
-    } else
-    {
-        brcr = "no";
-
-    }
-    var issclvc = document.getElementById("sclvc").checked;
-    var sclvc = "";
-    if (issclvc)
-    {
-        sclvc = "yes";
-
-    } else
-    {
-        sclvc = "no";
-
-    }
-    var isthbc = document.getElementById("thbc").checked;
-    var thbc = "";
-    if (isthbc)
-    {
-        thbc = "yes";
-
-    } else
-    {
-        thbc = "no";
-
-    }
-    var isthbd = document.getElementById("thbd").checked;
-    var thbd = "";
-    if (isthbd)
-    {
-        thbd = "yes";
-
-    } else
-    {
-        thbd = "no";
-
-    }
-    var isgc = document.getElementById("gc").checked;
-    var gc = "";
-    if (isgc)
-    {
-        gc = "yes";
-
-    } else
-    {
-        gc = "no";
-
-    }
-    var isahecy = document.getElementById("ahecy").checked;
-    var ahecy = "";
-    if (isahecy)
-    {
-        ahecy = "yes";
-
-    } else
-    {
-        ahecy = "no";
-
-    }
-    var isfrif = document.getElementById("frif").checked;
-    var frif = "";
-    if (isfrif)
-    {
-        frif = "yes";
-
-    } else
-    {
-        frif = "no";
-
-    }
-    var issysp = document.getElementById("sysp").checked;
-    var sysp = "";
-    if (issysp)
-    {
-        sysp = "yes";
-
-    } else
-    {
-        sysp = "no";
-
-    }
-    var isadcd = document.getElementById("adcd").checked;
-    var adcd = "";
-    if (isadcd)
-    {
-        adcd = "yes";
-
-    } else
-    {
-        adcd = "no";
-
-    }
-    var ispacr = document.getElementById("pacr").checked;
-    var pacr = "";
-    if (ispacr)
-    {
-        pacr = "yes";
-
-    } else
-    {
-        pacr = "no";
-
-    }
-    var isdrliva = document.getElementById("drliva").checked;
-    var drliva = "";
-    if (isdrliva)
-    {
-        drliva = "yes";
-
-    } else
-    {
-        drliva = "no";
-
-    }
-    var isvgid = document.getElementById("vgid").checked;
-    var vgid = "";
-    if (isvgid)
-    {
-        vgid = "yes";
-
-    } else
-    {
-        vgid = "no";
-
-    }
-    var ispssprt = document.getElementById("pssprt").checked;
-    var pssprt = "";
-    if (ispssprt)
-    {
-        pssprt = "yes";
-
-    } else
-    {
-        pssprt = "no";
-
-    }
-    var iscdid = document.getElementById("cdid").checked;
-    var cdid = "";
-    if (iscdid)
-    {
-        cdid = "yes";
-
-    } else
-    {
-        cdid = "no";
-
-    }
-    var isrncd = document.getElementById("rncd").checked;
-    var rncd = "";
-    if (isrncd)
-    {
-        rncd = "yes";
-
-    } else
-    {
-        rncd = "no";
-
-    }
-    var isltbl = document.getElementById("ltbl").checked;
-    var ltbl = "";
-    if (isltbl)
-    {
-        ltbl = "yes";
-
-    } else
-    {
-        ltbl = "no";
-
-    }
-    var isarca = document.getElementById("arca").checked;
-    var arca = "";
-    if (isarca)
-    {
-        arca = "yes";
-
-    } else
-    {
-        arca = "no";
-
-    }
-    var isvoigid = document.getElementById("voigid").checked;
-    var voigid = "";
-    if (voigid)
-    {
-        voigid = "yes";
-
-    } else
-    {
-        voigid = "no";
-
-    }
-    var ispassp = document.getElementById("passp").checked;
-    var passp = "";
-    if (ispassp)
-    {
-        passp = "yes";
-
-    } else
-    {
-        passp = "no";
-
-    }
-    var isbpass = document.getElementById("bpass").checked;
-    var bpass = "";
-    if (isbpass)
-    {
-        bpass = "yes";
-
-    } else
-    {
-        bpass = "no";
-
-    }
-    var isirano = document.getElementById("irano").checked;
-    var irano = "";
-    if (isirano)
-    {
-        irano = "yes";
-
-    } else
-    {
-        irano = "no";
-
-    }
-
-    addlic(issnf, ismn, isfn, isimhn, isdob, isflad, isst, ispt, isvm, isnone,isht, iswt, isidm,
-            isjod, isban, isbran, isifsc,isbankacc, isopno, isopno2, isocmpnm, isqyfmm, isfrae,
-          ismrae, isbrae, issrae, ishwae, iscdae,isdpat, isapat, isblat, isrene,brcr,
-            sclvc, thbc, gc, ahecy, frif, sysp, adcd, pacr, drliva, vgid, pssprt,
-            cdid, rncd, ltbl, arca, voigid, passp, bpass, irano);
-            }
+//function addlicdetails() {
+//
+//    var issnf = document.getElementById("snf").value;
+//    var ismn = document.getElementById("mn").value;
+//    var isfn = document.getElementById("fn").value;
+//    var isimhn = document.getElementById("imhn").value;
+//    var isdob = document.getElementById("dob").value;
+//    var isflad = document.getElementById("flad").value;
+//    var isst = document.getElementById("st").value;
+//    var ispt = document.getElementById("pt").value;
+//    var isvm = document.getElementById("vm").value;
+//    var isnone = document.getElementById("none").value;
+//    var isht = document.getElementById("ht").value;
+//    var iswt = document.getElementById("wt").value;
+//    var isidm = document.getElementById("idm").value;
+//    var isjod = document.getElementById("jod").value;
+//    var isban = document.getElementById("ban").value;
+//    var isbran = document.getElementById("bran").value;
+//    var isifsc = document.getElementById("ifsc").value;
+//    var isbankacc = document.getElementById("bankacc").value;
+//    var isopno = document.getElementById("opno").value;
+//    var isopno2 = document.getElementById("opno2").value;
+//    var isocmpnm = document.getElementById("ocmpnm").value;
+//    var isqyfmm = document.getElementById("qyfmm").value;
+//    var isfrae = document.getElementById("frae").value;
+//    var ismrae = document.getElementById("mrae").value;
+//    var isbrae = document.getElementById("brae").value;
+//    var issrae = document.getElementById("srae").value;
+//    var ishwae = document.getElementById("hwae").value;
+//    var iscdae = document.getElementById("cdae").value;
+//    var isdpat = document.getElementById("dpat").value;
+//    var isapat = document.getElementById("apat").value;
+//    var isblat = document.getElementById("blat").value;
+//    var isrene = document.getElementById("rene").value;
+//    
+//    var isbrcr = document.getElementById("brcr").checked;
+//    var brcr = "";
+//    if (isbrcr)
+//    {
+//        brcr = "yes";
+//
+//    } else
+//    {
+//        brcr = "no";
+//
+//    }
+//    var issclvc = document.getElementById("sclvc").checked;
+//    var sclvc = "";
+//    if (issclvc)
+//    {
+//        sclvc = "yes";
+//
+//    } else
+//    {
+//        sclvc = "no";
+//
+//    }
+//    var isthbc = document.getElementById("thbc").checked;
+//    var thbc = "";
+//    if (isthbc)
+//    {
+//        thbc = "yes";
+//
+//    } else
+//    {
+//        thbc = "no";
+//
+//    }
+//    var isthbd = document.getElementById("thbd").checked;
+//    var thbd = "";
+//    if (isthbd)
+//    {
+//        thbd = "yes";
+//
+//    } else
+//    {
+//        thbd = "no";
+//
+//    }
+//    var isgc = document.getElementById("gc").checked;
+//    var gc = "";
+//    if (isgc)
+//    {
+//        gc = "yes";
+//
+//    } else
+//    {
+//        gc = "no";
+//
+//    }
+//    var isahecy = document.getElementById("ahecy").checked;
+//    var ahecy = "";
+//    if (isahecy)
+//    {
+//        ahecy = "yes";
+//
+//    } else
+//    {
+//        ahecy = "no";
+//
+//    }
+//    var isfrif = document.getElementById("frif").checked;
+//    var frif = "";
+//    if (isfrif)
+//    {
+//        frif = "yes";
+//
+//    } else
+//    {
+//        frif = "no";
+//
+//    }
+//    var issysp = document.getElementById("sysp").checked;
+//    var sysp = "";
+//    if (issysp)
+//    {
+//        sysp = "yes";
+//
+//    } else
+//    {
+//        sysp = "no";
+//
+//    }
+//    var isadcd = document.getElementById("adcd").checked;
+//    var adcd = "";
+//    if (isadcd)
+//    {
+//        adcd = "yes";
+//
+//    } else
+//    {
+//        adcd = "no";
+//
+//    }
+//    var ispacr = document.getElementById("pacr").checked;
+//    var pacr = "";
+//    if (ispacr)
+//    {
+//        pacr = "yes";
+//
+//    } else
+//    {
+//        pacr = "no";
+//
+//    }
+//    var isdrliva = document.getElementById("drliva").checked;
+//    var drliva = "";
+//    if (isdrliva)
+//    {
+//        drliva = "yes";
+//
+//    } else
+//    {
+//        drliva = "no";
+//
+//    }
+//    var isvgid = document.getElementById("vgid").checked;
+//    var vgid = "";
+//    if (isvgid)
+//    {
+//        vgid = "yes";
+//
+//    } else
+//    {
+//        vgid = "no";
+//
+//    }
+//    var ispssprt = document.getElementById("pssprt").checked;
+//    var pssprt = "";
+//    if (ispssprt)
+//    {
+//        pssprt = "yes";
+//
+//    } else
+//    {
+//        pssprt = "no";
+//
+//    }
+//    var iscdid = document.getElementById("cdid").checked;
+//    var cdid = "";
+//    if (iscdid)
+//    {
+//        cdid = "yes";
+//
+//    } else
+//    {
+//        cdid = "no";
+//
+//    }
+//    var isrncd = document.getElementById("rncd").checked;
+//    var rncd = "";
+//    if (isrncd)
+//    {
+//        rncd = "yes";
+//
+//    } else
+//    {
+//        rncd = "no";
+//
+//    }
+//    var isltbl = document.getElementById("ltbl").checked;
+//    var ltbl = "";
+//    if (isltbl)
+//    {
+//        ltbl = "yes";
+//
+//    } else
+//    {
+//        ltbl = "no";
+//
+//    }
+//    var isarca = document.getElementById("arca").checked;
+//    var arca = "";
+//    if (isarca)
+//    {
+//        arca = "yes";
+//
+//    } else
+//    {
+//        arca = "no";
+//
+//    }
+//    var isvoigid = document.getElementById("voigid").checked;
+//    var voigid = "";
+//    if (voigid)
+//    {
+//        voigid = "yes";
+//
+//    } else
+//    {
+//        voigid = "no";
+//
+//    }
+//    var ispassp = document.getElementById("passp").checked;
+//    var passp = "";
+//    if (ispassp)
+//    {
+//        passp = "yes";
+//
+//    } else
+//    {
+//        passp = "no";
+//
+//    }
+//    var isbpass = document.getElementById("bpass").checked;
+//    var bpass = "";
+//    if (isbpass)
+//    {
+//        bpass = "yes";
+//
+//    } else
+//    {
+//        bpass = "no";
+//
+//    }
+//    var isirano = document.getElementById("irano").checked;
+//    var irano = "";
+//    if (isirano)
+//    {
+//        irano = "yes";
+//
+//    } else
+//    {
+//        irano = "no";
+//
+//    }
+//
+//    addlic(issnf, ismn, isfn, isimhn, isdob, isflad, isst, ispt, isvm, isnone,isht, iswt, isidm,
+//            isjod, isban, isbran, isifsc,isbankacc, isopno, isopno2, isocmpnm, isqyfmm, isfrae,
+//          ismrae, isbrae, issrae, ishwae, iscdae,isdpat, isapat, isblat, isrene,brcr,
+//            sclvc, thbc, gc, ahecy, frif, sysp, adcd, pacr, drliva, vgid, pssprt,
+//            cdid, rncd, ltbl, arca, voigid, passp, bpass, irano);
+//            }
 
 function addGumastaDetails() {
 
@@ -1300,11 +1323,11 @@ function addPassport2Details()
     //alert(bamt);
     var date3 = document.getElementById("date3").value;
     //alert(date3);
-    var amtPaid=document.getElementById("amtPaid").selected;
+    var amtPaid=document.getElementById("amtPaid").value;
     //alert(amountPaid);
-    var date4=document.getElementById("date4").selected;
+    var date4=document.getElementById("date4").value;
     //alert(date4);
-    var submitDate=document.getElementById("submitDate").selected;
+    var submitDate=document.getElementById("submitDate").value;
     //alert("textend"+submitDate);
 
 
@@ -1542,6 +1565,13 @@ function addPassport2Details()
 
 
 
+}
+
+
+function login_validation(){
+    
+    
+    loginvalidation();
 }
 
 function getPancardDetail() {
@@ -3287,7 +3317,7 @@ var isdocType = document.getElementById("docType").value;
 var issubmitDate = document.getElementById("submitDate").value;
 
     var iscustName = document.getElementById("custName").value;
-    alert(iscustName);
+    alert("custName"+iscustName);
     var iscontactNo = document.getElementById("contactNo").value;
     var isfn = document.getElementById("fn").value;
     var isimhn = document.getElementById("imhn").value;

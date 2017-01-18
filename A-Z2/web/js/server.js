@@ -877,8 +877,8 @@ alert("textend"+submitDate);     */
           
             + '&email=' + encodeURIComponent(email)
             + '&nmofp=' + encodeURIComponent(nmofp)
-            + '&dorsphno=' + encodeURIComponent(dors)
-            + '&dorsphno=' + encodeURIComponent(phno)
+            + '&dors=' + encodeURIComponent(dors)
+            + '&dors=' + encodeURIComponent(phno)
             + '&whnm=' + encodeURIComponent(whnm)
             + '&fnm=' + encodeURIComponent(fnm)
             + '&mnm=' + encodeURIComponent(mnm)
@@ -905,7 +905,7 @@ alert("textend"+submitDate);     */
             + '&amtPaid=' + encodeURIComponent(amtPaid)
             + '&date4=' + encodeURIComponent(date4)
             + '&submitDate=' + encodeURIComponent(submitDate)
-            + '&bc=' + encodeURIComponent(birthCert)
+            + '&birthCert=' + encodeURIComponent(birthCert)
             + '&schoolCert=' + encodeURIComponent(schoolCert)
             + '&ssc=' + encodeURIComponent(ssc)
             + '&hsc=' + encodeURIComponent(hsc)
@@ -924,7 +924,7 @@ alert("textend"+submitDate);     */
             + '&cl=' + encodeURIComponent(cl)
             + '&gb=' + encodeURIComponent(gb)
             + '&lp=' + encodeURIComponent(lp)
-            + '&ira' + encodeURIComponent(iran)
+            + '&iran' + encodeURIComponent(iran)
             + '&actionFrom=' + encodeURIComponent('addPassport2'));
 
 
@@ -932,6 +932,35 @@ alert("textend"+submitDate);     */
 
 
 
+}
+
+
+
+
+function loginvalidation(){
+    
+    
+    
+     var http = createHTTPObj();
+    http.onreadystatechange = function ()
+    {
+
+        if (http.readyState == 4) {
+
+            var response = http.responseText;
+           alert(response);
+            document.getElementById("searchDiv").innerHTML = response;
+        }
+
+    };
+    http.open('POST', 'aadharCard.htm', true);
+    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    http.send('&actionFrom=' + encodeURIComponent('openIndex'));
+    
+    
+    
+    
+    
 }
 function openRationCard()
 {
@@ -1635,7 +1664,7 @@ function addgetGrantRenewal(subDate,TheLicensingAuthority, MotorCyclewithoutgear
         if (http.readyState == 4) {
 
             var response = http.responseText;
-          
+         
             if((response).indexOf("Save Successfully") >=0){
                 alert("Record Save Successfully"); 
             }
