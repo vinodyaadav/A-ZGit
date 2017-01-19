@@ -673,25 +673,28 @@ function addPassPortDetails() {
 
 function addGumastaDetails() {
 
-
+var optionsRadios1 = document.getElementById("optionsRadios1").selected;
+    var optionsRadios2 = document.getElementById("optionsRadios2").selected;
     var licenceNo = document.getElementById("licenceNo").value;
+   
     var renewDate = document.getElementById("renewDate").value;
-    var companyName = document.getElementById("companyName").value;
+    var custName = document.getElementById("custName").value;
     var address = document.getElementById("address").value;
+    var contactNo = document.getElementById("contactNo").value;
     var natureOfBuisness = document.getElementById("natureOfBuisness").value;
     var employeeQty = document.getElementById("employeeQty").value;
     var propertiorName = document.getElementById("propertiorName").value;
     var renew1 = document.getElementById("renew1").value;
     var renew2 = document.getElementById("renew2").value;
     var renew3 = document.getElementById("renew3").value;
-    var decidedAmtRs = document.getElementById("decidedAmtRs").value;
-    var decidedAmtRs1 = document.getElementById("decidedAmtRs1").value;
-    var creditAmtRs = document.getElementById("creditAmtRs").value;
-    var creditAmtRs1 = document.getElementById("creditAmtRs1").value;
-    var balanceAmtRs = document.getElementById("balanceAmtRs").value;
-    var balanceAmtRs1 = document.getElementById("balanceAmtRs1").value;
-    var referanceName = document.getElementById("referanceName").value;
-    var referanceName1 = document.getElementById("referanceName1").value;
+      var decidedAmt=document.getElementById("decidedAmt").value;
+    // alert("20"+decidedAmt);
+    var amtPaid=document.getElementById("amtPaid").value;
+    // alert("21"+amtPaid);
+    var balAmt=document.getElementById("balAmt").value;
+     // alert("22"+balAmt);
+    var refAmt=document.getElementById("refAmt").value;
+        var submitDate=document.getElementById("submitDate").value;
 
     var isadharCard = document.getElementById("adharCard").checked;
     var adharCard = "";
@@ -768,18 +771,41 @@ function addGumastaDetails() {
         rentAgreement = "No";
     }
 
-    var decidedamt = document.getElementById("decidedamt").value;
-    var decidedamt1 = document.getElementById("decidedamt1").value;
-    var creditamt = document.getElementById("creditamt").value;
-    var creditamt1 = document.getElementById("creditamt1").value;
-    var balanceamt = document.getElementById("balanceamt").value;
-    var balanceamt1 = document.getElementById("balanceamt1").value;
-    var reference = document.getElementById("reference").value;
-    var reference1 = document.getElementById("reference1").value;
+    if(custName==""){
+        alert("Please Enter Customer Name")
+        document.getElementById("custName").focus();
+    }
+    else if(address==""){
+          alert("Please Enter Permanent Address")
+        document.getElementById("address").focus();
+    }
+    else if(contactNo==""){
+          alert("Please Enter Contact No")
+        document.getElementById("contactNo").focus();
+    }
+    else if(decidedAmt==""){
+          alert("Please Enter Decided Amount")
+        document.getElementById("decidedAmt").focus();
+    }else if(balAmt==""){
+          alert("Please Enter Balance Amount")
+        document.getElementById("balAmt").focus();
+    
+    }else if(amtPaid==""){
+          alert("Please Enter Paid amount")
+        document.getElementById("amtPaid").focus();
+        
+    }
+    else if(submitDate==""){
+          alert("Please Enter Submit Date")
+        document.getElementById("submitDate").focus();
+        
+    }
+    else{
 
-    addGumasta(licenceNo, renewDate, companyName, address, natureOfBuisness, employeeQty, propertiorName, renew1, renew2, renew3, decidedAmtRs, decidedAmtRs1, creditAmtRs, creditAmtRs1, balanceAmtRs, balanceAmtRs1, referanceName, referanceName1, lightBill, rentAgreement, pancard, drivingLicence, passport, votingCard, adharCard, decidedamt, decidedamt1, creditamt, creditamt1, balanceamt, balanceamt1, reference, reference1);
+    addGumasta(optionsRadios1,optionsRadios2,licenceNo, renewDate,contactNo, custName, address, natureOfBuisness, employeeQty, propertiorName, renew1, renew2, renew3,decidedAmt,amtPaid,balAmt,refAmt,submitDate ,lightBill, rentAgreement, pancard, drivingLicence, passport, votingCard, adharCard);
 
-}
+}}
+
 
 function addViewReport()
   {

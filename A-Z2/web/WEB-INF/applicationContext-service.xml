@@ -19,7 +19,9 @@
          <bean id="drivingServices" class="services.drivingServicesImpl" >
                 <property name="drivingDao"><ref bean="drivingDao" /></property>
         </bean>
-
+<bean id="gumastaServices" class="services.gumastaServicesImpl" >
+                <property name="gumastaDao"><ref bean="gumastaDao" /></property>
+        </bean>
  <bean id="foodServices" class="services.foodservicesImpl" >
                 <property name="foodDao"><ref bean="foodDao" /></property>
         </bean>

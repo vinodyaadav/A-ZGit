@@ -17,6 +17,7 @@
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/applicationContext-dao.xml</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/jsp/otherwork.jsp</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/jsp/aadharCard.jsp</file>
+            <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/services/licServices.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/dao/mediclaimDaoImpl.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/Model/lic.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/jsp/loginIndex.jsp</file>
@@ -29,7 +30,9 @@
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/Model/addGrantRenewal.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/Model/aadharCard.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/services/licServicesImpl.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/js/client.js</file>
+            <file>file:/I:/A-ZGit/A-ZGit/A-Z2/src/java/Model/CustReport.java</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/jsp/loanfile.jsp</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/web.xml</file>
             <file>file:/I:/A-ZGit/A-ZGit/A-Z2/web/WEB-INF/jsp/passport.jsp</file>

@@ -21,6 +21,7 @@ import Model.mediclaim;
 import  Model.twowfourwh;
 import java.util.List;
 import Model.addGrantRenewal;
+import Model.gumasta;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
@@ -52,6 +53,7 @@ import services.otherworkServices;
 import services.LoanService;
 import services.foodServices;
 import services.drivingServices;
+import services.gumastaServices;
 import services.mediclaimServices;
 import services.salaryItServices;
 import validator.LogData;
@@ -66,7 +68,6 @@ private mediclaimServices mediclaimservices;
         private salaryItServices salItServices;
     private aadharCardServices adCServices;
     private licServices lServices;
-    private salaryItServices salServices;
     private PanCardService pcardservice;
     private RationCardService rServices;
     private twowfourwServices tservice;
@@ -74,6 +75,7 @@ private mediclaimServices mediclaimservices;
     private drivingServices driving1;
     private foodServices foodservice;
     private LoanService loanServices;
+    private gumastaServices gumServices;
 
     private LogData logData = new LogData();
 
@@ -88,6 +90,18 @@ private mediclaimServices mediclaimservices;
     public void setGrServices(addGrantRenewalServices grServices) {
         this.grServices = grServices;
     }
+    
+    public gumastaServices getGumServices() {
+        return gumServices;
+    }
+
+    /**
+     * @param gumServices the gumServices to set
+     */
+    public void setGumServices(gumastaServices gumServices) {
+        this.gumServices = gumServices;
+    }
+   
      public void setMediclaimservices(mediclaimServices mediclaimservices) {
         this.mediclaimservices = mediclaimservices;
     }
@@ -126,9 +140,7 @@ private mediclaimServices mediclaimservices;
         this.passServices = passServices;
     }
 
-    public void setSalServices(salaryItServices salServices) {
-        this.salServices = salServices;
-    }
+   
 
     public licServices getlServices() {
         return lServices;
@@ -147,9 +159,7 @@ private mediclaimServices mediclaimservices;
         return adCServices;
     }
 
-    public salaryItServices getSalServices() {
-        return salServices;
-    }
+   
      public void setrServices(RationCardService rServices) {
         this.rServices = rServices;
     }
@@ -179,11 +189,13 @@ private mediclaimServices mediclaimservices;
 //    String path = currDir.getAbsolutePath();
         
 
-        if (action.equals("addGumastaDetail")) {
-
-            Integer licenceNo = ServletRequestUtils.getIntParameter(request, "licenceNo");
+       if (action.equals("addGumastaDetail")) {
+ String optionsRadios1 = ServletRequestUtils.getStringParameter(request, "optionsRadios1");
+             String optionsRadios2 = ServletRequestUtils.getStringParameter(request, "optionsRadios2");
+           String licenceNo = ServletRequestUtils.getStringParameter(request, "licenceNo");
             String renewDate = ServletRequestUtils.getStringParameter(request, "renewDate");
-            String companyName = ServletRequestUtils.getStringParameter(request, "companyName");
+             String contactNo = ServletRequestUtils.getStringParameter(request, "contactNo");
+            String custName = ServletRequestUtils.getStringParameter(request, "custName");
             String address = ServletRequestUtils.getStringParameter(request, "address");
             String natureOfBuisness = ServletRequestUtils.getStringParameter(request, "natureOfBuisness");
             String employeeQty = ServletRequestUtils.getStringParameter(request, "employeeQty");
@@ -191,14 +203,11 @@ private mediclaimServices mediclaimservices;
             String renew1 = ServletRequestUtils.getStringParameter(request, "renew1");
             String renew2 = ServletRequestUtils.getStringParameter(request, "renew2");
             String renew3 = ServletRequestUtils.getStringParameter(request, "renew3");
-            String decidedAmtRs = ServletRequestUtils.getStringParameter(request, "decidedAmtRs");
-            String decidedAmtRs1 = ServletRequestUtils.getStringParameter(request, "decidedAmtRs1");
-            String creditAmtRs = ServletRequestUtils.getStringParameter(request, "creditAmtRs");
-            String creditAmtRs1 = ServletRequestUtils.getStringParameter(request, "creditAmtRs1");
-            String balanceAmtRs = ServletRequestUtils.getStringParameter(request, "balanceAmtRs");
-            String balanceAmtRs1 = ServletRequestUtils.getStringParameter(request, "balanceAmtRs1");
-            String referanceName = ServletRequestUtils.getStringParameter(request, "referanceName");
-            String referanceName1 = ServletRequestUtils.getStringParameter(request, "referanceName1");
+            String decidedAmt = ServletRequestUtils.getStringParameter(request, "decidedAmt");
+            String amtPaid = ServletRequestUtils.getStringParameter(request, "amtPaid");
+            String balAmt = ServletRequestUtils.getStringParameter(request, "balAmt");
+            String refAmt = ServletRequestUtils.getStringParameter(request, "refAmt");
+            String submitDate = ServletRequestUtils.getStringParameter(request, "submitDate");
             String lightBill = ServletRequestUtils.getRequiredStringParameter(request, "lightBill");
             String rentAgreement = ServletRequestUtils.getRequiredStringParameter(request, "rentAgreement");
             String pancard = ServletRequestUtils.getRequiredStringParameter(request, "pancard");
@@ -206,20 +215,49 @@ private mediclaimServices mediclaimservices;
             String passport = ServletRequestUtils.getRequiredStringParameter(request, "passport");
             String votingCard = ServletRequestUtils.getRequiredStringParameter(request, "votingCard");
             String adharCard = ServletRequestUtils.getRequiredStringParameter(request, "adharCard");
-            String decidedamt = ServletRequestUtils.getRequiredStringParameter(request, "decidedamt");
-            String decidedamt1 = ServletRequestUtils.getRequiredStringParameter(request, "decidedamt1");
-            String creditamt = ServletRequestUtils.getRequiredStringParameter(request, "creditamt");
-            String creditamt1 = ServletRequestUtils.getRequiredStringParameter(request, "creditamt1");
-            String balanceamt = ServletRequestUtils.getRequiredStringParameter(request, "balanceamt");
-            String balanceamt1 = ServletRequestUtils.getRequiredStringParameter(request, "balanceamt1");
-            String reference = ServletRequestUtils.getRequiredStringParameter(request, "reference");
-            String reference1 = ServletRequestUtils.getRequiredStringParameter(request, "reference1");
 
-            mv.setViewName("index");
+            gumasta gum=new gumasta();
+            gum.setOptionsRadios1(optionsRadios1);
+            gum.setOptionsRadios2(optionsRadios2);
+            gum.setLicenceNo(licenceNo);
+            gum.setAddress(address);
+            gum.setAdharCard(adharCard);
+            gum.setAmtPaid(amtPaid);
+            gum.setBalAmt(balAmt);
+            gum.setContactNo(contactNo);
+            gum.setCustName(custName);
+            gum.setDecidedAmt(decidedAmt);
+            gum.setDrivingLicence(drivingLicence);
+            gum.setEmployeeQty(employeeQty);
+            gum.setLightBill(lightBill);
+            gum.setNatureOfBuisness(natureOfBuisness);
+            gum.setPancard(pancard);
+            gum.setPassport(passport);
+            gum.setPropertiorName(propertiorName);
+            gum.setRefAmt(refAmt);
+            gum.setRenewDate(renewDate);
+            gum.setVotingCard(votingCard);
+            gum.setRenew1(renew1);
+            gum.setRenew2(renew2);
+            gum.setRenew3(renew3);
+            gum.setRentAgreement(rentAgreement);
+            gum.setSubmitDate(submitDate);
+            
+            int gumsta=gumServices.addGumasta(gum);
+           if(gumsta==1){
+                mv.setViewName("messagePage");
+                mv.addObject("msg","Save Successfully");
             return mv;
-        }
+                
+            }
 
+            
+            else{
+            mv.setViewName("messagePage");
+            mv.addObject("msg","Error While Saving");
+            return mv;}
         
+        }
         
         if (action.equals("generatereportdetails")) {
             String SLASH="/";

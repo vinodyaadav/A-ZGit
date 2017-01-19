@@ -44,7 +44,10 @@
 					  <td style="padding-left:10px;" ><input class="form-control" id="renewDate" ></td>
 					   <td>  &nbsp&nbsp </td>
 					   <td>Firm or Company Name :</td>
-					  <td style="padding-left:5px;"style="width:105%;"  ><input class="form-control" id="companyName" ></td>
+					  <td style="padding-left:5px;"style="width:105%;"  ><input class="form-control" id="custName" ></td>
+                                           <td>  &nbsp&nbsp </td>
+					   <td>Contact No :</td>
+					  <td style="padding-left:5px;"style="width:105%;"  ><input class="form-control" id="contactNo" ></td>
 								
 					  
                                 
@@ -89,64 +92,22 @@
                                           <td>3)<input class="form-control" id="renew3"></td>
 					  </tr>
 					  </table><br>
-					  <table align="left" border="1" style="width:70%;">
-								<tr align="center">
-								<td>
-								<b>Account</b>
-								</td>
-								<td>
-								<b>Amt Rs.</b>
-								</td>
-								<td>
-								<b>Date Of Submit</b>
-								</td>
-								</tr>
-								<tr align="center">
-								<td>
-								Decided Amt-Rs.
-								</td>
-								<td>
-								<input class="form-control" id="decidedAmtRs">
-								</td>
-								<td>
-								<input class="form-control" id="decidedAmtRs1">
-								</td>
-								</tr><tr align="center">
-								<td>
-								Credit Amt-Rs.
-								</td>
-								<td>
-								<input class="form-control" id="creditAmtRs">
-								</td>
-								<td>
-								<input class="form-control" id="creditAmtRs1">
-								</td>
-								</tr><tr align="center">
-								<td>
-							    Balance Amt-Rs.
-								</td>
-								<td>
-								<input class="form-control" id="balanceAmtRs">
-								</td>
-								<td>
-								<input class="form-control" id="balanceAmtRs1">
-								</td>
-								</tr>
-								<tr align="center">
-								<td>
-								Referance Name
-								</td>
-								<td>
-								<input class="form-control" id="referanceName">
-								</td>
-								<td>
-								<input class="form-control" id="referanceName1">
-								</td>
-								</tr>
-								</table>
-					  <table >
-								<br><br><br><br><br><br>
-								  <br><br>
+					  <table border="1" style="width:80%;">
+                                    <tr >
+                                    <th><center>Decided Amt</center></th>
+                                    <th ><center>Paid Amt</center></th>
+                                    <th ><center>Balance Amt</center></th>
+                                    <th ><center>Reference Name</center></th>
+                                    <th ><center>Submit Date</center></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="form-control" id="decidedAmt"></td>
+                                        <td><input class="form-control" id="amtPaid"></td>
+                                        <td><input class="form-control" id="balAmt"></td>
+                                        <td><input class="form-control" id="refAmt"></td>
+                                        <td><input class="form-control" id="submitDate"></td>
+                                    <tr>
+                                </table>
 								   
 					
 							<br>

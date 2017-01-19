@@ -20,8 +20,6 @@
         <mapping class="Model.passport2"/>
         <mapping class="Model.otherwork"/>
          <mapping class="Model.DrivingModel"/>
-         <mapping  class="Model.mediclaim"/>
-         <mapping  class="Model.mediclaim"/>
     <mapping class="Model.FoodModel"/>
     <mapping class="Model.LoanModel"/>
     </session-factory>

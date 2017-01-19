@@ -471,9 +471,61 @@ if((response).indexOf("Save Successfully") >=0){
 
 }
 
-
-function addGumasta(licenceNo, renewDate, companyName, address, natureOfBuisness, employeeQty, propertiorName, renew1, renew2, renew3, decidedAmtRs, decidedAmtRs1, creditAmtRs, creditAmtRs1, balanceAmtRs, balanceAmtRs1, referanceName, referanceName1, lightBill, rentAgreement, pancard, drivingLicence, passport, votingCard, adharCard, decidedamt, decidedamt1, creditamt, creditamt1, balanceamt, balanceamt1, reference, reference1)
+function addGumasta(optionsRadios1,optionsRadios2,licenceNo, renewDate,contactNo, custName, address, natureOfBuisness, employeeQty, propertiorName, renew1, renew2, renew3,decidedAmt,amtPaid,balAmt,refAmt,submitDate, lightBill, rentAgreement, pancard, drivingLicence, passport, votingCard, adharCard)
 {
+    var http = createHTTPObj();
+    http.onreadystatechange = function()
+    {
+
+        if (http.readyState == 4) {
+
+            var response = http.responseText;
+            if((response).indexOf("Save Successfully") >=0){
+                alert("Record Save Successfully"); 
+            }
+            else{
+                  alert("Failed To Save Record");
+            }
+            document.getElementById("formgroup").innerHTML = response;
+        }
+
+    };
+    http.open('POST', 'aadharCard.htm', true);
+    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    http.send('licenceNo=' + encodeURIComponent(licenceNo)
+                + '&optionsRadios1=' + encodeURIComponent(optionsRadios1)
+            + '&optionsRadios2=' + encodeURIComponent(optionsRadios2)
+            + '&renewDate=' + encodeURIComponent(renewDate)
+            + '&custName=' + encodeURIComponent(custName)
+            + '&address=' + encodeURIComponent(address)
+     + '&contactNo=' + encodeURIComponent(contactNo)
+            + '&natureOfBuisness=' + encodeURIComponent(natureOfBuisness)
+            + '&employeeQty=' + encodeURIComponent(employeeQty)
+            + '&propertiorName=' + encodeURIComponent(propertiorName)
+            + '&renew1=' + encodeURIComponent(renew1)
+            + '&renew2=' + encodeURIComponent(renew2)
+            + '&renew3=' + encodeURIComponent(renew3)
+            + '&decidedAmt=' + encodeURIComponent(decidedAmt)
+            + '&balAmt=' + encodeURIComponent(balAmt)
+            + '&amtPaid=' + encodeURIComponent(amtPaid)
+            + '&refAmt=' + encodeURIComponent(refAmt)
+            + '&submitDate=' + encodeURIComponent(submitDate)
+            + '&lightBill=' + encodeURIComponent(lightBill)
+            + '&rentAgreement=' + encodeURIComponent(rentAgreement)
+            + '&pancard=' + encodeURIComponent(pancard)
+            + '&drivingLicence=' + encodeURIComponent(drivingLicence)
+            + '&passport=' + encodeURIComponent(passport)
+            + '&votingCard=' + encodeURIComponent(votingCard)
+            + '&adharCard=' + encodeURIComponent(adharCard)
+   
+            + '&actionFrom=' + encodeURIComponent('addGumastaDetail'));
+}
+
+
+
+function addmediclaimDetails(documentType,oldPolicyNo, companyName, renewDate, customerName, middleName, lastName, husbandName, dob, address, contactNo, memberFirstName, age, secondMemberName, secondMemberAge, thirdMemberName, thirdMemberAge, fourthMemberName, fourthMemberAge, fifthMemberName, fifthMemberAge, adharCard, votingCard, passport, drivingLicence, pancard, adharCardadd, votingCardadd, passportadd, drivingLicenceadd, bankpassbook, corporateLetter, rentAgreement, addProofLightBill, decideAmt, amountPaid, balAmt, refName, submitDate) {
+
+
     var http = createHTTPObj();
     http.onreadystatechange = function()
     {
@@ -488,43 +540,48 @@ function addGumasta(licenceNo, renewDate, companyName, address, natureOfBuisness
     };
     http.open('POST', 'aadharCard.htm', true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.send('licenceNo=' + encodeURIComponent(licenceNo)
+
+    http.send('documentType=' + encodeURIComponent(documentType)
+            + '&oldPolicyNo=' + encodeURIComponent(oldPolicyNo)
             + '&renewDate=' + encodeURIComponent(renewDate)
             + '&companyName=' + encodeURIComponent(companyName)
+            + '&customerName=' + encodeURIComponent(customerName)
+            + '&middleName=' + encodeURIComponent(middleName)
+            + '&lastName=' + encodeURIComponent(lastName)
+            + '&husbandName=' + encodeURIComponent(husbandName)
+            + '&dob=' + encodeURIComponent(dob)
             + '&address=' + encodeURIComponent(address)
-            + '&natureOfBuisness=' + encodeURIComponent(natureOfBuisness)
-            + '&employeeQty=' + encodeURIComponent(employeeQty)
-            + '&propertiorName=' + encodeURIComponent(propertiorName)
-            + '&renew1=' + encodeURIComponent(renew1)
-            + '&renew2=' + encodeURIComponent(renew2)
-            + '&renew3=' + encodeURIComponent(renew3)
-            + '&decidedAmtRs=' + encodeURIComponent(decidedAmtRs)
-            + '&decidedAmtRs1=' + encodeURIComponent(decidedAmtRs1)
-            + '&creditAmtRs=' + encodeURIComponent(creditAmtRs)
-            + '&creditAmtRs1=' + encodeURIComponent(creditAmtRs1)
-            + '&balanceAmtRs=' + encodeURIComponent(balanceAmtRs)
-            + '&balanceAmtRs1=' + encodeURIComponent(balanceAmtRs1)
-            + '&referanceName=' + encodeURIComponent(referanceName)
-            + '&referanceName1=' + encodeURIComponent(referanceName1)
-
-            + '&lightBill=' + encodeURIComponent(lightBill)
-            + '&rentAgreement=' + encodeURIComponent(rentAgreement)
-            + '&pancard=' + encodeURIComponent(pancard)
-            + '&drivingLicence=' + encodeURIComponent(drivingLicence)
-            + '&passport=' + encodeURIComponent(passport)
-            + '&votingCard=' + encodeURIComponent(votingCard)
+            + '&contactNo=' + encodeURIComponent(contactNo)
+            + '&memberFirstName=' + encodeURIComponent(memberFirstName)
+            + '&age=' + encodeURIComponent(age)
+            + '&secondMemberName=' + encodeURIComponent(secondMemberName)
+            + '&secondMemberAge=' + encodeURIComponent(secondMemberAge)
+            + '&thirdMemberName=' + encodeURIComponent(thirdMemberName)
+            + '&thirdMemberAge=' + encodeURIComponent(thirdMemberAge)
+            + '&fourthMemberName=' + encodeURIComponent(fourthMemberName)
+            + '&fourthMemberAge=' + encodeURIComponent(fourthMemberAge)
+            + '&fifthMemberName=' + encodeURIComponent(fifthMemberName)
+            + '&fifthMemberAge=' + encodeURIComponent(fifthMemberAge)
             + '&adharCard=' + encodeURIComponent(adharCard)
-            + '&decidedamt=' + encodeURIComponent(decidedamt)
-            + '&decidedamt1=' + encodeURIComponent(decidedamt1)
-            + '&creditamt=' + encodeURIComponent(creditamt)
-            + '&creditamt1=' + encodeURIComponent(creditamt1)
-            + '&balanceamt=' + encodeURIComponent(balanceamt)
-            + '&balanceamt1=' + encodeURIComponent(balanceamt1)
-            + '&reference=' + encodeURIComponent(reference)
-            + '&reference1=' + encodeURIComponent(reference1)
-            + '&actionFrom=' + encodeURIComponent('addGumastaDetail'));
+            + '&votingCard=' + encodeURIComponent(votingCard)
+            + '&passport=' + encodeURIComponent(passport)
+            + '&drivingLicence=' + encodeURIComponent(drivingLicence)
+            + '&pancard=' + encodeURIComponent(pancard)
+            + '&adharCardadd=' + encodeURIComponent(adharCardadd)
+            + '&votingCardadd=' + encodeURIComponent(votingCardadd)
+            + '&passportadd=' + encodeURIComponent(passportadd)
+            + '&drivingLicenceadd=' + encodeURIComponent(drivingLicenceadd)
+            + '&bankpassbook=' + encodeURIComponent(bankpassbook)
+            + '&corporateLetter=' + encodeURIComponent(corporateLetter)
+            + '&rentAgreement=' + encodeURIComponent(rentAgreement)
+            + '&addProofLightBill=' + encodeURIComponent(addProofLightBill)
+            + '&decideAmt=' + encodeURIComponent(decideAmt)
+            + '&amountPaid=' + encodeURIComponent(amountPaid)
+            + '&balAmt=' + encodeURIComponent(balAmt)
+            + '&refName=' + encodeURIComponent(refName)
+            + '&submitDate=' + encodeURIComponent(submitDate)
+            + '&actionFrom=' + encodeURIComponent('addmediclaim'));
 }
-
 
 
 function addmediclaimDetails(documentType,oldPolicyNo, companyName, renewDate, customerName, middleName, lastName, husbandName, dob, address, contactNo, memberFirstName, age, secondMemberName, secondMemberAge, thirdMemberName, thirdMemberAge, fourthMemberName, fourthMemberAge, fifthMemberName, fifthMemberAge, adharCard, votingCard, passport, drivingLicence, pancard, adharCardadd, votingCardadd, passportadd, drivingLicenceadd, bankpassbook, corporateLetter, rentAgreement, addProofLightBill, decideAmt, amountPaid, balAmt, refName, submitDate) {

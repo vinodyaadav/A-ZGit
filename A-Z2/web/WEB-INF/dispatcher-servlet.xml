@@ -22,7 +22,7 @@
           <property name="grServices"><ref bean="addGrantRenewalServices"/> </property>
             <property name="othServices"><ref bean="otherworkServices"/></property>
              <property name="mediclaimservices"><ref bean="mediclaimServices"/> </property>
-            
+            <property name="gumServices"><ref bean="gumastaServices"/> </property>
 <property name="driving1"><ref bean="drivingServices"/> </property>
         <property name="foodservice"><ref bean="foodServices"/> </property>
           <property name="loanServices"><ref bean="LoanService"/> </property>

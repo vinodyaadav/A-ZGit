@@ -21,9 +21,12 @@
     </bean>
     
     
+    <bean id="gumastaDao" class="dao.gumastaDaoImpl">
+            <property name="sessionFactory"> <ref bean="sessionFactory"/> </property>
+    </bean>
     
     
-    
+   
     
     <bean id="drivingDao" class="dao.drivingDaoImpl">
             <property name="sessionFactory">   <ref bean="sessionFactory"/>  </property>
