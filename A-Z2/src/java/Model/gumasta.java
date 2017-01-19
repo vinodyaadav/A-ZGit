@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.web.bind.ServletRequestUtils;
 
 /**
@@ -16,12 +18,16 @@ import org.springframework.web.bind.ServletRequestUtils;
  * @author Amit Mehta
  */
 @Entity
+@Table(name="gumasta")
 public class gumasta implements Serializable {
 
     private int id;
-    private int licenceNo;
+    private String optionsRadios1;
+    private String optionsRadios2;
+    private String licenceNo;
     private String renewDate;
-    private String companyName;
+    private String contactNo;
+    private String custName;
     private String address;
     private String natureOfBuisness;
     private String employeeQty;
@@ -29,14 +35,11 @@ public class gumasta implements Serializable {
     private String renew1;
     private String renew2;
     private String renew3;
-    private String decidedAmtRs;
-    private String decidedAmtRs1;
-    private String creditAmtRs;
-    private String creditAmtRs1;
-    private String balanceAmtRs1;
-    private String balanceAmtRs;
-    private String referanceName1;
-    private String referanceName;
+    private String decidedAmt;
+    private String amtPaid;
+    private String balAmt;
+    private String refAmt;
+    private String submitDate;
     private String lightBill;
     private String rentAgreement;
     private String pancard;
@@ -44,25 +47,26 @@ public class gumasta implements Serializable {
     private String passport;
     private String votingCard;
     private String adharCard;
-    private String decidedamt;
-    private String decidedamt1;
-    private String creditamt;
-    private String creditamt1;
-    private String balanceamt;
-    private String balanceamt1;
-    private String reference;
-    private String reference1;
+
 
   
     
     
     
-    @Id
-    @GeneratedValue
+     @Id
+    @GenericGenerator(name = "generator", strategy="increment")
+    @GeneratedValue(generator = "generator")
+
+    /**
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
@@ -70,14 +74,14 @@ public class gumasta implements Serializable {
     /**
      * @return the licenceNo
      */
-    public int getLicenceNo() {
+    public String getLicenceNo() {
         return licenceNo;
     }
 
     /**
      * @param licenceNo the licenceNo to set
      */
-    public void setLicenceNo(int licenceNo) {
+    public void setLicenceNo(String licenceNo) {
         this.licenceNo = licenceNo;
     }
 
@@ -96,17 +100,17 @@ public class gumasta implements Serializable {
     }
 
     /**
-     * @return the companyName
+     * @return the custName
      */
-    public String getCompanyName() {
-        return companyName;
+    public String getCustName() {
+        return custName;
     }
 
     /**
-     * @param companyName the companyName to set
+     * @param custName the custName to set
      */
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCustName(String custName) {
+        this.custName = custName;
     }
 
     /**
@@ -208,115 +212,73 @@ public class gumasta implements Serializable {
     }
 
     /**
-     * @return the decidedAmtRs
+     * @return the decidedAmt
      */
-    public String getDecidedAmtRs() {
-        return decidedAmtRs;
+    public String getDecidedAmt() {
+        return decidedAmt;
     }
 
     /**
-     * @param decidedAmtRs the decidedAmtRs to set
+     * @param decidedAmt the decidedAmt to set
      */
-    public void setDecidedAmtRs(String decidedAmtRs) {
-        this.decidedAmtRs = decidedAmtRs;
+    public void setDecidedAmt(String decidedAmt) {
+        this.decidedAmt = decidedAmt;
     }
 
     /**
-     * @return the decidedAmtRs1
+     * @return the amtPaid
      */
-    public String getDecidedAmtRs1() {
-        return decidedAmtRs1;
+    public String getAmtPaid() {
+        return amtPaid;
     }
 
     /**
-     * @param decidedAmtRs1 the decidedAmtRs1 to set
+     * @param amtPaid the amtPaid to set
      */
-    public void setDecidedAmtRs1(String decidedAmtRs1) {
-        this.decidedAmtRs1 = decidedAmtRs1;
+    public void setAmtPaid(String amtPaid) {
+        this.amtPaid = amtPaid;
     }
 
     /**
-     * @return the creditAmtRs
+     * @return the balAmt
      */
-    public String getCreditAmtRs() {
-        return creditAmtRs;
+    public String getBalAmt() {
+        return balAmt;
     }
 
     /**
-     * @param creditAmtRs the creditAmtRs to set
+     * @param balAmt the balAmt to set
      */
-    public void setCreditAmtRs(String creditAmtRs) {
-        this.creditAmtRs = creditAmtRs;
+    public void setBalAmt(String balAmt) {
+        this.balAmt = balAmt;
     }
 
     /**
-     * @return the creditAmtRs1
+     * @return the refAmt
      */
-    public String getCreditAmtRs1() {
-        return creditAmtRs1;
+    public String getRefAmt() {
+        return refAmt;
     }
 
     /**
-     * @param creditAmtRs1 the creditAmtRs1 to set
+     * @param refAmt the refAmt to set
      */
-    public void setCreditAmtRs1(String creditAmtRs1) {
-        this.creditAmtRs1 = creditAmtRs1;
+    public void setRefAmt(String refAmt) {
+        this.refAmt = refAmt;
     }
 
     /**
-     * @return the balanceAmtRs1
+     * @return the submitDate
      */
-    public String getBalanceAmtRs1() {
-        return balanceAmtRs1;
+    public String getSubmitDate() {
+        return submitDate;
     }
 
     /**
-     * @param balanceAmtRs1 the balanceAmtRs1 to set
+     * @param submitDate the submitDate to set
      */
-    public void setBalanceAmtRs1(String balanceAmtRs1) {
-        this.balanceAmtRs1 = balanceAmtRs1;
-    }
-
-    /**
-     * @return the balanceAmtRs
-     */
-    public String getBalanceAmtRs() {
-        return balanceAmtRs;
-    }
-
-    /**
-     * @param balanceAmtRs the balanceAmtRs to set
-     */
-    public void setBalanceAmtRs(String balanceAmtRs) {
-        this.balanceAmtRs = balanceAmtRs;
-    }
-
-    /**
-     * @return the referanceName1
-     */
-    public String getReferanceName1() {
-        return referanceName1;
-    }
-
-    /**
-     * @param referanceName1 the referanceName1 to set
-     */
-    public void setReferanceName1(String referanceName1) {
-        this.referanceName1 = referanceName1;
-    }
-
-    /**
-     * @return the referanceName
-     */
-    public String getReferanceName() {
-        return referanceName;
-    }
-
-    /**
-     * @param referanceName the referanceName to set
-     */
-    public void setReferanceName(String referanceName) {
-        this.referanceName = referanceName;
+    public void setSubmitDate(String submitDate) {
+        this.submitDate = submitDate;
     }
 
     /**
@@ -418,116 +380,45 @@ public class gumasta implements Serializable {
     }
 
     /**
-     * @return the decidedamt
+     * @return the contactNo
      */
-    public String getDecidedamt() {
-        return decidedamt;
+    public String getContactNo() {
+        return contactNo;
     }
 
     /**
-     * @param decidedamt the decidedamt to set
+     * @param contactNo the contactNo to set
      */
-    public void setDecidedamt(String decidedamt) {
-        this.decidedamt = decidedamt;
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 
     /**
-     * @return the decidedamt1
+     * @return the optionsRadios1
      */
-    public String getDecidedamt1() {
-        return decidedamt1;
+    public String getOptionsRadios1() {
+        return optionsRadios1;
     }
 
     /**
-     * @param decidedamt1 the decidedamt1 to set
+     * @param optionsRadios1 the optionsRadios1 to set
      */
-    public void setDecidedamt1(String decidedamt1) {
-        this.decidedamt1 = decidedamt1;
+    public void setOptionsRadios1(String optionsRadios1) {
+        this.optionsRadios1 = optionsRadios1;
     }
 
     /**
-     * @return the creditamt
+     * @return the optionsRadios2
      */
-    public String getCreditamt() {
-        return creditamt;
+    public String getOptionsRadios2() {
+        return optionsRadios2;
     }
 
     /**
-     * @param creditamt the creditamt to set
+     * @param optionsRadios2 the optionsRadios2 to set
      */
-    public void setCreditamt(String creditamt) {
-        this.creditamt = creditamt;
+    public void setOptionsRadios2(String optionsRadios2) {
+        this.optionsRadios2 = optionsRadios2;
     }
 
-    /**
-     * @return the creditamt1
-     */
-    public String getCreditamt1() {
-        return creditamt1;
     }
-
-    /**
-     * @param creditamt1 the creditamt1 to set
-     */
-    public void setCreditamt1(String creditamt1) {
-        this.creditamt1 = creditamt1;
-    }
-
-    /**
-     * @return the balanceamt
-     */
-    public String getBalanceamt() {
-        return balanceamt;
-    }
-
-    /**
-     * @param balanceamt the balanceamt to set
-     */
-    public void setBalanceamt(String balanceamt) {
-        this.balanceamt = balanceamt;
-    }
-
-    /**
-     * @return the balanceamt1
-     */
-    public String getBalanceamt1() {
-        return balanceamt1;
-    }
-
-    /**
-     * @param balanceamt1 the balanceamt1 to set
-     */
-    public void setBalanceamt1(String balanceamt1) {
-        this.balanceamt1 = balanceamt1;
-    }
-
-    /**
-     * @return the reference
-     */
-    public String getReference() {
-        return reference;
-    }
-
-    /**
-     * @param reference the reference to set
-     */
-    public void setReference(String reference) {
-        this.reference = reference;
-    }
-
-    /**
-     * @return the reference1
-     */
-    public String getReference1() {
-        return reference1;
-    }
-
-    /**
-     * @param reference1 the reference1 to set
-     */
-    public void setReference1(String reference1) {
-        this.reference1 = reference1;
-    }
-
-    
-}

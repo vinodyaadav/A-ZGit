@@ -13,10 +13,8 @@
         <mapping class="Model.PanCard"/>
         <mapping  class="Model.aadharCard"/>
         <mapping  class="Model.gumasta"/>
-        <mapping  class="Model.mediclaim"/>
         <mapping  class="Model.lic"/>
         <mapping class="Model.addGrantRenewal"/>
-        <mapping class="Model.salaryIt"/>
         <mapping class="Model.passport2"/>
         <mapping class="Model.otherwork"/>
          <mapping class="Model.DrivingModel"/>
