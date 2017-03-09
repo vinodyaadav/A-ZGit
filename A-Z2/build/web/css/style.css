@@ -1,0 +1,210 @@
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none;
+}
+
+#responsive {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none; 
+} 
+
+#header {
+    background-color:#3C346F;
+    color:white;
+    text-align:center;
+    padding:5px;
+    font-family: Algerian;
+}
+
+#hbni{
+    font-family: Algerian;
+}
+
+#siteMenu{
+    display: none;
+}
+
+#im {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+img {
+    float: left;
+    height: 100px;
+}
+
+#section {
+    width:350px;
+    height: 200px;
+    float:left;
+    padding:10px;        
+}
+
+#footer {
+    background-color:#3C346F;
+    color:white;
+    text-align:center;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+}
+
+.navbar-nav > li > a {
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+    text-transform: uppercase;
+    
+}
+
+.navbar { 
+    min-height:30px !important
+        
+}
+
+#accordion{
+   overflow:auto;
+   height:100%;
+   padding:0px;
+   padding-right:5px;
+   padding-left:3px;
+}
+
+#modalWindow{
+    background-color: #EBEBFF;
+    border-radius:4px;
+}
+
+#loginModalWindow{
+    background-color: #EBEBFF;
+    border-radius:4px;
+}
+
+#modalHeadLine {
+    margin-top:2px;
+    border-color:#d0d0d0;
+}
+
+.signin{
+    background: #BDC8E8;
+}
+
+
+.form-control.uname{
+    background: #fff url(../images/user.png) no-repeat 95% center;
+}
+
+.form-control.pword{
+    background: #fff url(../images/locked.png) no-repeat 95% center;
+}
+
+.navbar-nav > li > a{
+    background: #FFFAFA;
+    color: #000000;
+    
+}
+
+.navbar-final{
+   background: #FFFAFA; 
+}
+
+.navbar-nav > li > a:hover{
+    background-color: #D1FFFF;
+}
+
+ tr > th{
+    background-color: #3C346F;
+    color: white;
+}
+
+#modalline{
+    border-color:#BDC8E8;
+    margin-top:10px;
+}
+
+#student{
+    background-color: #3C346F;
+    color: white;
+}
+
+.glyphicon{
+    color:#A32900;
+}
+
+.fa{
+    color:#A32900;
+}
+
+.panel-default {
+ opacity: 1.2;
+ margin-top:10px;
+}
+
+.panel-body{
+    opacity:0.9;
+    background:#FBFCFE;
+}
+
+#heading {
+    opacity:2;
+    background:#F0F0F0 ;
+    margin:0px;
+    text-transform: uppercase;
+}
+
+.panel-heading > h4 {
+  margin:0px;
+  text-align:center;
+}
+.table-striped{
+    background: #BDC8E8;
+}
+
+#uplod {
+    background: #EBEBFF;
+}
+#login{
+    padding:2px;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+#preloader{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #E4E7EA;
+        z-index: 10000;
+}
+#uplod1{
+    background:#BDC8E8;
+}
+#newaca{
+    text-align: center;
+    height: 70px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    white-space: normal;
+}
+#newaca.btn{
+    background-color: #3C346F;
+    color:white;
+}
+#newtab{
+    word-wrap:break-word;
+}
